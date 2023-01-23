@@ -7,7 +7,7 @@ const { class: className = '' } = Astro.props;
 <script>
 const canvas = document.querySelector('#hyperdrive') as HTMLCanvasElement
 const ctx = canvas.getContext('2d')
-const DURATION = 2000
+const DURATION = 2500
 
 const effect = { x: 0, y: 0, warpspeed: false, paused: true }
 let timeout: NodeJS.Timeout
@@ -124,7 +124,7 @@ function run () {
 	const doFor = (count, cb) => { let i = 0; while (i < count && cb(i++) !== true); } // the ; after while loop is important don't remove
 
 	const sCurve = (v, p) => (2 / (1 + Math.pow(p, -v))) - 1
-	const randHSLA = (h, h1, s = 100, s1 = 100, l = 50, l1 = 50, a = 1, a1 = 1) => { return `hsla(${randI(h, h1) % 360},${randI(s, s1)}%,${randI(l, l1)}%,${rand(a, a1)})` }
+	const randHSLA = (h, h1, s = 0, s1 = 0, l = 0, l1 = 0, a = 1, a1 = 1) => { return `hsla(${randI(h, h1) % 360},${randI(s, s1)}%,${randI(l, l1)}%,${rand(a, a1)})` }
 
 	// canvas settings
 	let w = canvas.width
@@ -157,6 +157,7 @@ function run () {
 		if (p === undefined) { p = points.add(new Point()) }
 		p.reset(pos)
 	}
+
 	// point object represents a single star
 	function Point (pos?: { x: number; y: number }) { // this function is duplicated as reset
 		if (pos) {
@@ -227,7 +228,7 @@ function run () {
 			}
 		}
 
-		const hs = sCurve(hyperSpeed, 2.25)
+		const hs = sCurve(hyperSpeed, 1)
 		ctx.globalAlpha = 1
 		ctx.setTransform(1, 0, 0, 1, 0, 0) // reset transform
 
