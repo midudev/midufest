@@ -1,0 +1,26 @@
+---
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/400-italic.css'
+import '@fontsource/montserrat/800.css'
+import '@fontsource/montserrat/800-italic.css'
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
