@@ -1,9 +1,9 @@
 ---
-const { href, external, title } = Astro.props
+const { className, href, external, title } = Astro.props
 const anchorProps = external ? { target: '_blank', rel: 'noopener' } : {}
 ---
 
-<a class='relative font-extrabold text-xl transition text-primary hover:text-white' href={href} {...anchorProps}>
+<a class={`${className} relative font-extrabold text-xl transition text-primary hover:text-white`} href={href} {...anchorProps}>
 	{title}
 </a>
 

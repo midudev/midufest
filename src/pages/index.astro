@@ -16,14 +16,14 @@ import Link from '../components/Link.astro';
 			<header>
 				<Logo />
 			</header>
-			<footer class='animate-fadeIn animate-delay-500 -rotate-[10deg] text-center m-auto'>
-				<h2 class='italic font-extrabold text-4xl text-white'>21 de marzo</h2>
-				<h3 class='italic text-white/80 text-lg'>17:00 horas GMT+1 · Streaming en <a class='text-purple-400 hover:underline' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
+			<footer class='animate-fadeIn animate-delay-500 text-center m-auto'>
+				<h2 class='italic font-extrabold text-4xl text-white -rotate-[10deg]'>21 de marzo</h2>
+				<h3 class='italic text-white/80 text-lg -rotate-[10deg]'>17:00 horas GMT+1 · Streaming en <a class='italic text-purple-400 hover:underline -rotate-[10deg]' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
 					twitch.tv/midudev</a>
 				</h3>
-				<div class='flex gap-x-8 mt-4 justify-center'>
-					<Link href='https://forms.gle/WdVHVa3x5BN3wX7c7' title='Enviar charla' isExternal />
-					<Link href='mailto:hi@midu.dev' title='Quiero ser sponsor' isExternal />
+				<div class='flex gap-x-8 mt-4 justify-center -rotate-[10deg]'>
+					<Link className='italic' href='https://forms.gle/WdVHVa3x5BN3wX7c7' title='Enviar charla' isExternal />
+					<Link className='italic' href='mailto:hi@midu.dev' title='Quiero ser sponsor' isExternal />
 				</div>
 			</footer>
 		</section>
