@@ -5,7 +5,7 @@ import Starfield from '../components/Starfield.astro'
 import Logo from '../components/Logo.astro';
 ---
 
-<Layout title='midufest'>
+<Layout title='midufest - ¡La fiesta de la programación!'>
 	<div class='absolute top-0 bottom-0 w-full'>
 		<Starfield noGradient />
 		<HyperDrive class='z-0 w-full h-full' />
@@ -16,8 +16,10 @@ import Logo from '../components/Logo.astro';
 				<Logo />
 			</div>
 			<div class='-rotate-[10deg] text-center'>
-				<h2 class='italic font-bold text-4xl text-white'>21 de marzo</h2>
-				<h3 class='italic text-white/80 text-lg'>17:00 horas GMT+1 · Streaming en twitch.tv/midudev</h3>
+				<h2 class='italic font-extrabold text-4xl text-white'>21 de marzo</h2>
+				<h3 class='italic text-white/80 text-lg'>17:00 horas GMT+1 · Streaming en <a class='text-purple-400 hover:underline' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
+					twitch.tv/midudev</a>
+				</h3>
 			</div>
 		</section>
 	</main>

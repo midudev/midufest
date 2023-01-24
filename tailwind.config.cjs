@@ -5,7 +5,9 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			fontFamily: ['Montserrat', ...defaultTheme.fontFamily.sans]
+			sans: {
+				fontFamily: ['Montserrat', ...defaultTheme.fontFamily.sans]
+			}
 		}
 	},
 	plugins: []
