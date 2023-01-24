@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro'
 import HyperDrive from '../components/HyperDrive.astro'
 import Starfield from '../components/Starfield.astro'
-import Logo from '../components/Logo.astro';
+import Logo from '../components/Logo.astro'
+import Link from '../components/Link.astro';
 ---
 
 <Layout title='midufest - ¡La fiesta de la programación!'>
@@ -12,15 +13,19 @@ import Logo from '../components/Logo.astro';
 	</div>
 	<main class='grid place-content-center w-screen h-screen'>
 		<section class='flex items-center flex-col gap-y-8'>
-			<div>
+			<header>
 				<Logo />
-			</div>
-			<div class='-rotate-[10deg] text-center'>
+			</header>
+			<footer class='-rotate-[10deg] text-center m-auto'>
 				<h2 class='italic font-extrabold text-4xl text-white'>21 de marzo</h2>
 				<h3 class='italic text-white/80 text-lg'>17:00 horas GMT+1 · Streaming en <a class='text-purple-400 hover:underline' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
 					twitch.tv/midudev</a>
 				</h3>
-			</div>
+				<div class='flex gap-x-8 mt-4 justify-center'>
+					<Link href='#' title='Enviar charla' isExternal />
+					<Link href='#' title='Quiero ser sponsor' isExternal />
+				</div>
+			</footer>
 		</section>
 	</main>
 </Layout>
