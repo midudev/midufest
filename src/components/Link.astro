@@ -8,14 +8,6 @@ const anchorProps = external ? { target: '_blank', rel: 'noopener' } : {}
 </a>
 
 <style>
-  a::before, a::after {
-    font-weight: 400;
-    position: absolute;
-    color: #FFD200;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
   a::before {
     left: -10px;
     content: '{';
@@ -29,5 +21,13 @@ const anchorProps = external ? { target: '_blank', rel: 'noopener' } : {}
   a:hover::before,
   a:hover::after {
     opacity: 1;
+  }
+
+  a::before, a::after {
+    font-weight: 400;
+    position: absolute;
+    color: #FFD200;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 </style>
