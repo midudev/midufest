@@ -1,6 +1,10 @@
 ---
 import Link from './Link.astro'
 import Logo from './Logo.astro'
+import TwitchIcon from '@icons/Twitch.astro'
+import InstragramIcon from '@icons/Instagram.astro'
+import TwitterIcon from '@icons/Twitter.astro'
+import YouTubeIcon from '@icons/YouTube.astro'
 
 const NAVIGATION_LINKS = [{
 	title: 'Inicio',
@@ -32,29 +36,29 @@ const NAVIGATION_LINKS = [{
 
 const SOCIAL_NETWORKS_LINKS = [
 	{
+		component: TwitchIcon,
 		title: 'twitch',
 		icon: 'twitch-icon.svg',
-		href: 'https://twitch.tv/midudev',
-		disabled: false
+		href: 'https://twitch.tv/midudev'
 	},
 	{
+		component: YouTubeIcon,
 		title: 'youtube',
 		icon: 'youtube-icon.svg',
-		href: 'https://youtube.com/midudev',
-		disabled: false
+		href: 'https://youtube.com/midudev'
 	},
 	{
+		component: InstragramIcon,
 		title: 'instagram',
 		icon: 'instagram-icon.svg',
-		href: 'https://instagram.com/midu.dev',
-		disabled: false
+		href: 'https://instagram.com/midu.dev'
 	},
 	{
+		component: TwitterIcon,
 		title: 'twitter',
 		icon: 'twitter-icon.svg',
-		href: 'https://twitter.com/midudev',
-		disabled: false
-	},
+		href: 'https://twitter.com/midudev'
+	}
 ]
 ---
 
@@ -70,17 +74,20 @@ const SOCIAL_NETWORKS_LINKS = [
 				})
 			}
 		</ul>
+
+		<div class='flex flex-row items-center justify-center gap-4 py-2'>
+			{
+				SOCIAL_NETWORKS_LINKS.map(({ component: Icon, href, title }) => {
+					return <a class='text-white hover:scale-125 transition-all hover:text-primary' href={href} target='_blank' rel='noopener noreferrer'>
+						<span aria-label={title}>
+							<Icon />
+						</span>
+					</a>
+				})
+			}
+		</div>
+
 		<span class='text-white opacity-70'>Desarrollado moviendo las manitas 👋</span>
 	</nav>
-
-	<div class="flex flex-row items-center gap-3 py-2">
-		{
-			SOCIAL_NETWORKS_LINKS.map(({ icon, href, title }) => {
-				return <a href={href} target="_blank">
-					<img src={icon} alt={title} width="20">
-				</a>
-			})
-		}
-	</div>
 </aside>
 
