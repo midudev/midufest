@@ -1,0 +1,28 @@
+---
+import Link from '@components/Link.astro'
+import { Countdown } from '@components/Countdown'
+---
+
+<section class='min-h-screen'>
+	<h1 class='text-primary text-6xl text-center font-black uppercase italic -rotate-[10deg]'>
+		<span class='text-9xl block'>Evento</span>
+		de Programación y Desarrollo
+	</h1>
+	<div class='text-center mt-10 flex justify-center flex-col'>
+		<h2 class='animate-fadeIn animate-delay-200 italic font-extrabold text-6xl text-white -rotate-[10deg]'>21 de marzo</h2>
+		<h3 class='animate-fadeIn animate-delay-200 italic text-white/80 text-lg -rotate-[10deg]'>17:00 horas GMT+1 <span class='px-2'>·</span> Streaming en <a class='italic text-purple-400 hover:underline -rotate-[10deg]' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
+			twitch.tv/midudev</a>
+		</h3>
+
+		<div class='m-auto mt-8 animate-fadeIn animate-delay-500'>
+			<Countdown targetDate={new Date(1679414400000)} client:visible />
+		</div>
+
+		<footer class='mt-20'>
+			<div class='flex gap-x-8 mt-4 justify-center -rotate-[10deg]'>
+				<Link className='italic' href='https://forms.gle/WdVHVa3x5BN3wX7c7' title='Enviar charla' isExternal />
+				<Link className='italic' href='mailto:hi@midu.dev' title='Quiero ser sponsor' isExternal />
+			</div>
+		</footer>
+	</div>
+</section>

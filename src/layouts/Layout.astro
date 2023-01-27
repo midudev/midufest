@@ -3,6 +3,10 @@ import '@fontsource/montserrat/400.css'
 import '@fontsource/montserrat/400-italic.css'
 import '@fontsource/montserrat/800.css'
 import '@fontsource/montserrat/800-italic.css'
+import '@fontsource/montserrat/900-italic.css'
+
+import Navigation from '@components/Navigation.astro'
+import Background from '@components/sections/Background.astro'
 
 export interface Props {
 	title: string;
@@ -21,12 +25,27 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Background />
+
+		<div class='pt-24 flex justify-between m-auto gap-x-24 w-[1200px]'>
+			<div class='w-52'>
+				<Navigation />
+			</div>
+
+			<main class='flex-1 relative'>
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 
 <style>
 	html {
     font-family: "Montserrat", system-ui, sans-serif;
+		scroll-behavior: smooth;
   }
+
+	body {
+		background: #000;
+	}
 </style>

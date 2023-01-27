@@ -1,18 +1,16 @@
 ---
 export interface Props {
     subtle?: boolean;
-    noGradient?: boolean;
 }
-const { subtle, noGradient } = Astro.props as Props;
+const { subtle } = Astro.props as Props;
 ---
 
 <div class:list={[
-    "pointer-events-none",
-    "absolute inset-0 -z-50",
-    subtle && "bg-[length:100%_175%]",
-    noGradient ? 'bg-zinc-900' : 'bg-gradient-to-b bg-no-repeat bg-blue-800 from-zinc-900 to-purple-800'
+  'pointer-events-none bg-black',
+  'absolute inset-0 -z-50',
+  subtle && 'bg-[length:100%_175%]'
 ]}>
-    <div class="starfield absolute inset-0" />
+    <div class='starfield absolute inset-0' />
 </div>
 
 <style>
