@@ -7,7 +7,7 @@ const { subtle } = Astro.props as Props;
 
 <div class:list={[
   'pointer-events-none bg-black',
-  'absolute inset-0 -z-50',
+  'fixed inset-0 -z-50',
   subtle && 'bg-[length:100%_175%]'
 ]}>
     <div class='starfield absolute inset-0' />
