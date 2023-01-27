@@ -29,6 +29,33 @@ const NAVIGATION_LINKS = [{
 	title: 'Código de conducta',
 	href: '#coc'
 }]
+
+const SOCIAL_NETWORKS_LINKS = [
+	{
+		title: 'twitch',
+		icon: 'twitch-icon.svg',
+		href: 'https://twitch.tv/midudev',
+		disabled: false
+	},
+	{
+		title: 'youtube',
+		icon: 'youtube-icon.svg',
+		href: 'https://youtube.com/midudev',
+		disabled: false
+	},
+	{
+		title: 'instagram',
+		icon: 'instagram-icon.svg',
+		href: 'https://instagram.com/midu.dev',
+		disabled: false
+	},
+	{
+		title: 'twitter',
+		icon: 'twitter-icon.svg',
+		href: 'https://twitter.com/midudev',
+		disabled: false
+	},
+]
 ---
 
 <aside class='flex flex-col items-center lg:sticky top-24 xl:top-10 xl:sticky'>
@@ -45,5 +72,15 @@ const NAVIGATION_LINKS = [{
 		</ul>
 		<span class='text-white opacity-70'>Desarrollado moviendo las manitas 👋</span>
 	</nav>
+
+	<div class="flex flex-row items-center gap-3 py-2">
+		{
+			SOCIAL_NETWORKS_LINKS.map(({ icon, href, title }) => {
+				return <a href={href} target="_blank">
+					<img src={icon} alt={title} width="20">
+				</a>
+			})
+		}
+	</div>
 </aside>
 
