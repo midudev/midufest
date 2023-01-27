@@ -1,6 +1,6 @@
 ---
-const { className, href, external, title } = Astro.props
-const anchorProps = external ? { target: '_blank', rel: 'noopener' } : {}
+const { className, href, isExternal, title } = Astro.props
+const anchorProps = isExternal ? { target: '_blank', rel: 'noopener' } : {}
 ---
 
 <a class={`${className} relative font-extrabold text-xl transition text-primary hover:text-white`} href={href} {...anchorProps}>
