@@ -17,6 +17,7 @@
 		"sourceType": "module"
 	},
 	"rules": {
+		"indent": ["warn", "tab"],
 		"no-unused-vars": "warn",
 		"@typescript-eslint/no-unused-vars": [
 			"warn",
@@ -28,7 +29,6 @@
 		],
 		"no-multiple-empty-lines": "off",
 		"no-tabs": "off",
-		"indent": ["warn", "tab"],
 		"quotes": ["warn", "single"],
 		"jsx-quotes": ["warn", "prefer-single"],
 		"eol-last": "off"
