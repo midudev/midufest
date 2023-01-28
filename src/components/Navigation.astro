@@ -1,11 +1,7 @@
 ---
 import Link from './Link.astro'
-import Logo from './Logo.astro'
-import TwitchIcon from '@icons/Twitch.astro'
-import InstragramIcon from '@icons/Instagram.astro'
-import TwitterIcon from '@icons/Twitter.astro'
-import YouTubeIcon from '@icons/YouTube.astro'
 import MenuIcon from '@icons/Menu.astro'
+import { Icons } from '@components/Icons'
 
 const NAVIGATION_LINKS = [{
 	title: 'Inicio',
@@ -37,25 +33,25 @@ const NAVIGATION_LINKS = [{
 
 const SOCIAL_NETWORKS_LINKS = [
 	{
-		component: TwitchIcon,
+		component: Icons.twitch,
 		title: 'twitch',
 		icon: 'twitch-icon.svg',
 		href: 'https://twitch.tv/midudev'
 	},
 	{
-		component: YouTubeIcon,
+		component: Icons.youtube,
 		title: 'youtube',
 		icon: 'youtube-icon.svg',
 		href: 'https://youtube.com/midudev'
 	},
 	{
-		component: InstragramIcon,
+		component: Icons.instagram,
 		title: 'instagram',
 		icon: 'instagram-icon.svg',
 		href: 'https://instagram.com/midu.dev'
 	},
 	{
-		component: TwitterIcon,
+		component: Icons.twitter,
 		title: 'twitter',
 		icon: 'twitter-icon.svg',
 		href: 'https://twitter.com/midudev'
@@ -64,7 +60,7 @@ const SOCIAL_NETWORKS_LINKS = [
 ---
 
 <aside class='flex flex:row items-center text-primary px-4 pb-20 justify-between xl:sticky xl:top-24 xl:flex-col'>
-	<Logo class='w-32' />
+	<Icons.logo class='w-32 animate-zoomIn' />
 
 	<input type='checkbox' id='menu' hidden class='peer' />
 	<label
