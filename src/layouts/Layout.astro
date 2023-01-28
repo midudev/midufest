@@ -1,6 +1,7 @@
 ---
 import '@fontsource/montserrat/400.css'
 import '@fontsource/montserrat/400-italic.css'
+import '@fontsource/montserrat/600-italic.css'
 import '@fontsource/montserrat/800.css'
 import '@fontsource/montserrat/800-italic.css'
 import '@fontsource/montserrat/900-italic.css'
@@ -27,12 +28,12 @@ const { title } = Astro.props;
 	<body>
 		<Background />
 
-		<div class='pt-24 flex justify-between m-auto gap-x-24 w-[1200px]'>
-			<div class='w-52'>
+		<div class='pt-4 xl:pt-24 flex flex-col xl:flex-row justify-between m-auto xl:gap-x-24 xl:w-[1200px]'>
+			<div class='w-full xl:w-52'>
 				<Navigation />
 			</div>
 
-			<main class='flex-1 relative'>
+			<main class='flex-1 relative px-6'>
 				<slot />
 			</main>
 		</div>
