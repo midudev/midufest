@@ -1,4 +1,12 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+		"astro-build.astro-vscode",
+		"usernamehw.errorlens",
+		"wix.vscode-import-cost",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss",
+		"pflannery.vscode-versionlens",
+		"dbaeumer.vscode-eslint"
+	],
   "unwantedRecommendations": []
 }
