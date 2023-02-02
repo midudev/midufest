@@ -15,6 +15,8 @@
     "@astrojs/preact": "^2.0.0",
     "@astrojs/tailwind": "3.0.0",
     "@fontsource/montserrat": "4.5.14",
+    "@supabase/supabase-js": "^2.7.0",
+    "add-to-calendar-button": "2.1.1",
     "astro": "2.0.0",
     "atropos": "1.0.2",
     "preact": "10.11.3",
