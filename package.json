@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "3.0.0",
     "@fontsource/montserrat": "4.5.14",
     "astro": "2.0.0",
+    "atropos": "1.0.2",
     "preact": "10.11.3",
     "tailwindcss": "3.2.4"
   },
