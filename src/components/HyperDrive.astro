@@ -4,7 +4,7 @@
 const { class: className = '' } = Astro.props;
 ---
 
-<canvas aria-hidden='true' class:list={['absolute inset-0', 'transition-opacity duration-1000', className]} id='hyperdrive' style='mix-blend-mode: screen;' />
+<canvas aria-hidden='true' class:list={['fixed inset-0', 'transition-opacity duration-1000', className]} id='hyperdrive' style='mix-blend-mode: screen;' />
 
 <script>
 const canvas = document.querySelector('#hyperdrive') as HTMLCanvasElement
