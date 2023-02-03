@@ -22,12 +22,12 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
 				</div>)
 			}
 
-			<section class='flex -rotate-[10deg]'>
+			<section class='flex'>
 				{time.map(({ label, value }, index) => {
 					const isLast = index === time.length - 1
 
 					return (
-						<div class='flex-col w-16 lg:w-28 text-center italic '>
+						<div class='flex-col w-16 lg:w-28 text-center'>
 							<div class={`text-3xl lg:text-5xl text-white font-bold relative ${!isLast && 'after:ml-2 lg:after:ml-5 after:font-bold after:text-white after:content-[":"] after:absolute'}`}>{value}</div>
 							{label && <span class='text-white/80 text-xs lg:text-base'>{label}</span>}
 						</div>
