@@ -2,11 +2,15 @@
 import Layout from '@layouts/Layout.astro'
 import Landing from '@components/sections/Landing.astro'
 import CodigoDeConducta from '@components/sections/CodigoDeConducta.astro'
-import Ticket from '@components/sections/Ticket.astro';
+import Ticket from '@components/sections/Ticket.astro'
+import Speakers from '@components/sections/Speakers.astro'
+import Agenda from '@components/sections/Agenda.astro';
 ---
 
 <Layout title='midufest - ¡La fiesta de la programación!'>
 	<Landing />
+	<Speakers />
+	<Agenda />
 	<Ticket />
 	<CodigoDeConducta />
 </Layout>
