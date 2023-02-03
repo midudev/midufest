@@ -3,11 +3,15 @@ import { Button } from '@components/Button.jsx'
 import SectionTitle from '@components/SectionTitle.astro';
 ---
 
-<section id='speakers' class='break-words text-white py-24 mx-auto max-w-prose md:px-2'>
+<section id='speakers' class='break-words text-white py-24 mx-auto max-w-prose md:px-2 min-h-screen'>
 	<SectionTitle
 		title='Speakers' />
 
-	<h3 class='text-white font-bold'>¿Quieres participar?</h3>
-	<p>Anímate y envía tu propuesta de charla 🤘:</p>
-	<Button href=''>Enviar charla</Button>
+	<div class='py-24 flex items-center justify-center flex-col text-center gap-y-8'>
+		<div>
+			<h3 class='text-white font-bold text-3xl'>¿Quieres participar?</h3>
+			<p class='text-xl opacity-70'>Anímate y envía tu propuesta de charla 🤘</p>
+		</div>
+		<Button href='https://forms.gle/WdVHVa3x5BN3wX7c7'>Enviar charla</Button>
+	</div>
 </section>
