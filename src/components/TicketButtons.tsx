@@ -3,13 +3,6 @@ import { atcb_action as addToCalendar } from 'add-to-calendar-button'
 import { Icons } from '@components/Icons'
 import type { ComponentChildren } from 'preact'
 
-const TWITTER_TEXT = `¡Ya tengo mi ENTRADA para la #MiduFest!
-Conferencia de Desarrollo y Programación Web.
-
-¡Consigue el tuyo totalmente gratis! ⇩ https://midufest.com/ticket/midudev`
-
-const TWITTER_URL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(TWITTER_TEXT)}`
-
 const Button = (
 	{ children, onClick, type } :
 	{ children: ComponentChildren, onClick: () => void, type?: string }
@@ -67,7 +60,14 @@ export function TicketButtons () {
 	}
 
 	const handleTwitterShare = () => {
-		window.open(TWITTER_URL)
+		if (user?.username) {
+			const text = `¡Ya tengo mi ENTRADA para la #MiduFest!
+Conferencia de Desarrollo y Programación Web.
+
+¡Consigue el tuyo totalmente gratis! ⇩ https://midufest.com/ticket/${user.username}`
+
+			window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`)
+		}
 	}
 
 	if (!user) return null
