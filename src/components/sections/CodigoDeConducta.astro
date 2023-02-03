@@ -1,5 +1,7 @@
 ---
 import { Icons } from '@components/Icons'
+import ArticleCoc from '@components/ArticleCoc.astro'
+import Paragraph from '@components/Paragraph.astro'
 import SectionTitle from '@components/SectionTitle.astro';
 ---
 
@@ -7,246 +9,207 @@ import SectionTitle from '@components/SectionTitle.astro';
 	<SectionTitle
 		title='Código de conducta' id='código-de-conducta-convenido-para-contribuyentes' />
 
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='nuestro-compromiso'
-			class='text-2xl font-bold text-white'
-		>
-			Nuestro compromiso
-		</h3>
-		<Icons.people />
-	</div>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Nosotros, como miembros, contribuyentes y administradores, nos comprometemos
-		a hacer de la participación en nuestra comunidad una experiencia libre de
-		acoso para todo el mundo, independientemente de la edad, dimensión corporal,
-		minusvalía visible o invisible, etnicidad, características sexuales,
-		identidad y expresión de género, nivel de experiencia, educación, nivel
-		socioeconómico, nacionalidad, apariencia personal, raza, religión, o
-		identidad u orientación sexual.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Nos comprometemos a actuar e interactuar de maneras que contribuyan a una
-		comunidad abierta, acogedora, diversa, inclusiva y sana.
-	</p>
+	<ArticleCoc id='nuestro-compromiso' title='Nuestro compromiso'>
+		<Icons.people slot='icon' />
+		<Paragraph>
+			Nosotros, como miembros, contribuyentes y administradores, nos comprometemos
+			a hacer de la participación en nuestra comunidad una experiencia libre de
+			acoso para todo el mundo, independientemente de la edad, dimensión corporal,
+			minusvalía visible o invisible, etnicidad, características sexuales,
+			identidad y expresión de género, nivel de experiencia, educación, nivel
+			socioeconómico, nacionalidad, apariencia personal, raza, religión, o
+			identidad u orientación sexual.
+		</Paragraph>
+		<Paragraph>
+			Nos comprometemos a actuar e interactuar de maneras que contribuyan a una
+			comunidad abierta, acogedora, diversa, inclusiva y sana.
+		</Paragraph>
+	</ArticleCoc>
 
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='nuestros-estándares'
-			class='text-2xl font-bold text-white'
-		>
-			Nuestros estándares
-		</h3>
-		<Icons.eye />
-	</div>
+	<ArticleCoc id='nuestros-estándares' title='Nuestros estándares'>
+		<Icons.eye slot='icon'/>
+		<Paragraph>
+			Ejemplos de comportamiento que contribuyen a crear un ambiente positivo para
+			nuestra comunidad:
+		</Paragraph>
+		<ul class='pb-8 pl-4 text-white/90 max-w-xl list-disc list-inside'>
+			<li>Demostrar empatía y amabilidad ante otras personas</li>
+			<li>Respeto a diferentes opiniones, puntos de vista y experiencias</li>
+			<li>Dar y aceptar adecuadamente retroalimentación constructiva</li>
+			<li>
+				Aceptar la responsabilidad y disculparse ante quienes se vean afectados
+				por nuestros errores, aprendiendo de la experiencia
+			</li>
+			<li>
+				Centrarse en lo que sea mejor no solo para nosotros como individuos, sino
+				para la comunidad en general
+			</li>
+		</ul>
+		<Paragraph>Ejemplos de comportamiento inaceptable:</Paragraph>
+		<ul class='pb-8 pl-4 text-white/90 max-w-xl list-disc list-inside'>
+			<li>
+				El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones
+				sexuales de cualquier tipo
+			</li>
+			<li>
+				Comentarios despectivos (<em>trolling</em>), insultantes o derogatorios, y
+				ataques personales o políticos
+			</li>
+			<li>El acoso en público o privado</li>
+			<li>
+				Publicar información privada de otras personas, tales como direcciones
+				físicas o de correo electrónico, sin su permiso explícito
+			</li>
+			<li>
+				Otras conductas que puedan ser razonablemente consideradas como
+				inapropiadas en un entorno profesional
+			</li>
+		</ul>
+	</ArticleCoc>
 
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Ejemplos de comportamiento que contribuyen a crear un ambiente positivo para
-		nuestra comunidad:
-	</p>
-	<ul class='pb-8 pl-4 text-white/90 max-w-xl list-disc list-inside'>
-		<li>Demostrar empatía y amabilidad ante otras personas</li>
-		<li>Respeto a diferentes opiniones, puntos de vista y experiencias</li>
-		<li>Dar y aceptar adecuadamente retroalimentación constructiva</li>
-		<li>
-			Aceptar la responsabilidad y disculparse ante quienes se vean afectados
-			por nuestros errores, aprendiendo de la experiencia
-		</li>
-		<li>
-			Centrarse en lo que sea mejor no solo para nosotros como individuos, sino
-			para la comunidad en general
-		</li>
-	</ul>
-	<p class='mb-8 text-white/90 max-w-xl'>Ejemplos de comportamiento inaceptable:</p>
-	<ul class='pb-8 pl-4 text-white/90 max-w-xl list-disc list-inside'>
-		<li>
-			El uso de lenguaje o imágenes sexualizadas, y aproximaciones o atenciones
-			sexuales de cualquier tipo
-		</li>
-		<li>
-			Comentarios despectivos (<em>trolling</em>), insultantes o derogatorios, y
-			ataques personales o políticos
-		</li>
-		<li>El acoso en público o privado</li>
-		<li>
-			Publicar información privada de otras personas, tales como direcciones
-			físicas o de correo electrónico, sin su permiso explícito
-		</li>
-		<li>
-			Otras conductas que puedan ser razonablemente consideradas como
-			inapropiadas en un entorno profesional
-		</li>
-	</ul>
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='aplicacion-responsabilidad'
-			class='text-2xl font-bold text-white'
-		>
-		Aplicación de las responsabilidades
-		</h3>
-		<Icons.app />
-	</div>
+	<ArticleCoc id='aplicacion-responsabilidad' title='Aplicación de las responsabilidades'>
+		<Icons.app slot='icon'/>
+		<Paragraph>
+			Los administradores de la conferencia son responsables de aclarar y hacer
+			cumplir nuestros estándares de comportamiento aceptable y tomarán acciones
+			apropiadas y correctivas de forma justa en respuesta a cualquier
+			comportamiento que consideren inapropiado, amenazante, ofensivo o dañino.
+		</Paragraph>
+		<Paragraph>
+			Los administradores de la conferencia tendrán el derecho y la
+			responsabilidad de eliminar, editar o rechazar comentarios, <em>commits</em
+			>, código, ediciones de páginas de wiki, <em>issues</em> y otras contribuciones
+			que no se alineen con este Código de Conducta, y comunicarán las razones para
+			sus decisiones de moderación cuando sea apropiado.
+		</Paragraph>
+	</ArticleCoc>
 
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Los administradores de la conferencia son responsables de aclarar y hacer
-		cumplir nuestros estándares de comportamiento aceptable y tomarán acciones
-		apropiadas y correctivas de forma justa en respuesta a cualquier
-		comportamiento que consideren inapropiado, amenazante, ofensivo o dañino.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Los administradores de la conferencia tendrán el derecho y la
-		responsabilidad de eliminar, editar o rechazar comentarios, <em>commits</em
-		>, código, ediciones de páginas de wiki, <em>issues</em> y otras contribuciones
-		que no se alineen con este Código de Conducta, y comunicarán las razones para
-		sus decisiones de moderación cuando sea apropiado.
-	</p>
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='alcance'
-			class='text-2xl font-bold text-white'
-		>
-		Alcance
+	<ArticleCoc id='alcance' title='Alcance'>
+		<Icons.bullsEye slot='icon' />
+		<Paragraph>
+			Este código de conducta aplica tanto a espacios del proyecto como a espacios
+			públicos donde un individuo esté en representación del proyecto o comunidad.
+			Ejemplos de esto incluyen el uso de la cuenta oficial de correo electrónico,
+			publicaciones a través de las redes sociales oficiales, o presentaciones con
+			personas designadas en eventos en línea o no.
+		</Paragraph>
+	</ArticleCoc>
+
+	<ArticleCoc id='Aplicación' title='Aplicación'>
+		<Icons.warning slot='icon'/>
+		<Paragraph>
+			Instancias de comportamiento abusivo, acosador o inaceptable de otro modo
+			podrán ser reportadas a los administradores de la comunidad responsables del
+			cumplimiento a través de <a class='underline' href='mailto:miduga@gmail.com'
+			>miduga@gmail.com</a
+			>. Todas las quejas serán evaluadas e investigadas de una manera puntual y
+			justa.
+		</Paragraph>
+		<Paragraph>
+			Todos los administradores de la comunidad están obligados a respetar la
+			privacidad y la seguridad de quienes reporten incidentes.
+		</Paragraph>
+	</ArticleCoc>
+
+	<ArticleCoc id='guias-aplicacion' title='Guías de aplicación'>
+		<Icons.guide slot='icon'/>
+		<Paragraph>
+			Los administradores de la comunidad seguirán estas Guías de Impacto en la
+			Comunidad para determinar las consecuencias de cualquier acción que juzguen
+			como un incumplimiento de este Código de Conducta:
+		</Paragraph>
+		<h3 class='mb-4 text-xl font-bold text-primary' id='1-corrección'>
+			1. Corrección
 		</h3>
-		<Icons.bullsEye />
-	</div>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Este código de conducta aplica tanto a espacios del proyecto como a espacios
-		públicos donde un individuo esté en representación del proyecto o comunidad.
-		Ejemplos de esto incluyen el uso de la cuenta oficial de correo electrónico,
-		publicaciones a través de las redes sociales oficiales, o presentaciones con
-		personas designadas en eventos en línea o no.
-	</p>
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='aplicacion'
-			class='text-2xl font-bold text-white'
-		>
-		Aplicación
+		<Paragraph>
+			<strong>Impacto en la Comunidad</strong>: El uso de lenguaje inapropiado u
+			otro comportamiento considerado no profesional o no acogedor en la
+			comunidad.
+		</Paragraph>
+		<Paragraph>
+			<strong>Consecuencia</strong>: Un aviso escrito y privado por parte de los
+			administradores de la comunidad, proporcionando claridad alrededor de la
+			naturaleza de este incumplimiento y una explicación de por qué el
+			comportamiento es inaceptable. Una disculpa pública podría ser solicitada.
+		</Paragraph>
+		<h3 class='mb-4 text-xl font-bold text-primary' id='2-aviso'>2. Aviso</h3>
+		<Paragraph>
+			<strong>Impacto en la Comunidad</strong>: Un incumplimiento causado por un
+			único incidente o por una cadena de acciones.
+		</Paragraph>
+		<Paragraph>
+			<strong>Consecuencia</strong>: Un aviso con consecuencias por comportamiento
+			prolongado. No se interactúa con las personas involucradas, incluyendo
+			interacción no solicitada con quienes se encuentran aplicando el Código de
+			Conducta, por un periodo especificado de tiempo. Esto incluye evitar las
+			interacciones en espacios de la comunidad, así como a través de canales
+			externos como las redes sociales. Incumplir estos términos puede conducir a
+			una expulsión temporal o permanente.
+		</Paragraph>
+		<h3 class='mb-4 text-xl font-bold text-primary' id='3-expulsión-temporal'>
+			3. Expulsión temporal
 		</h3>
-		<Icons.warning />
-	</div>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Instancias de comportamiento abusivo, acosador o inaceptable de otro modo
-		podrán ser reportadas a los administradores de la comunidad responsables del
-		cumplimiento a través de <a class='underline' href='mailto:miduga@gmail.com'
-		>miduga@gmail.com</a
-		>. Todas las quejas serán evaluadas e investigadas de una manera puntual y
-		justa.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Todos los administradores de la comunidad están obligados a respetar la
-		privacidad y la seguridad de quienes reporten incidentes.
-	</p>
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='guias-aplicacion'
-			class='text-2xl font-bold text-white'
-		>
-		Guías de aplicación
+		<Paragraph>
+			<strong>Impacto en la Comunidad</strong>: Una serie de incumplimientos de
+			los estándares de la comunidad, incluyendo comportamiento inapropiado
+			continuo.
+		</Paragraph>
+		<Paragraph>
+			<strong>Consecuencia</strong>: Una expulsión temporal de cualquier forma de
+			interacción o comunicación pública con la comunidad durante un intervalo de
+			tiempo especificado. No se permite interactuar de manera pública o privada
+			con las personas involucradas, incluyendo interacciones no solicitadas con
+			quienes se encuentran aplicando el Código de Conducta, durante este periodo.
+			Incumplir estos términos puede conducir a una expulsión permanente.
+		</Paragraph>
+		<h3 class='mb-4 text-xl font-bold text-primary' id='4-expulsión-permanente'>
+			4. Expulsión permanente
 		</h3>
-		<Icons.guide />
-	</div>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Los administradores de la comunidad seguirán estas Guías de Impacto en la
-		Comunidad para determinar las consecuencias de cualquier acción que juzguen
-		como un incumplimiento de este Código de Conducta:
-	</p>
-	<h3 class='mb-4 text-xl font-bold text-primary' id='1-corrección'>
-		1. Corrección
-	</h3>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Impacto en la Comunidad</strong>: El uso de lenguaje inapropiado u
-		otro comportamiento considerado no profesional o no acogedor en la
-		comunidad.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Consecuencia</strong>: Un aviso escrito y privado por parte de los
-		administradores de la comunidad, proporcionando claridad alrededor de la
-		naturaleza de este incumplimiento y una explicación de por qué el
-		comportamiento es inaceptable. Una disculpa pública podría ser solicitada.
-	</p>
-	<h3 class='mb-4 text-xl font-bold text-primary' id='2-aviso'>2. Aviso</h3>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Impacto en la Comunidad</strong>: Un incumplimiento causado por un
-		único incidente o por una cadena de acciones.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Consecuencia</strong>: Un aviso con consecuencias por comportamiento
-		prolongado. No se interactúa con las personas involucradas, incluyendo
-		interacción no solicitada con quienes se encuentran aplicando el Código de
-		Conducta, por un periodo especificado de tiempo. Esto incluye evitar las
-		interacciones en espacios de la comunidad, así como a través de canales
-		externos como las redes sociales. Incumplir estos términos puede conducir a
-		una expulsión temporal o permanente.
-	</p>
-	<h3 class='mb-4 text-xl font-bold text-primary' id='3-expulsión-temporal'>
-		3. Expulsión temporal
-	</h3>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Impacto en la Comunidad</strong>: Una serie de incumplimientos de
-		los estándares de la comunidad, incluyendo comportamiento inapropiado
-		continuo.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Consecuencia</strong>: Una expulsión temporal de cualquier forma de
-		interacción o comunicación pública con la comunidad durante un intervalo de
-		tiempo especificado. No se permite interactuar de manera pública o privada
-		con las personas involucradas, incluyendo interacciones no solicitadas con
-		quienes se encuentran aplicando el Código de Conducta, durante este periodo.
-		Incumplir estos términos puede conducir a una expulsión permanente.
-	</p>
-	<h3 class='mb-4 text-xl font-bold text-primary' id='4-expulsión-permanente'>
-		4. Expulsión permanente
-	</h3>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Impacto en la Comunidad</strong>: Demostrar un patrón sistemático de
-		incumplimientos de los estándares de la comunidad, incluyendo conductas
-		inapropiadas prolongadas en el tiempo, acoso de individuos, o agresiones o
-		menosprecio a grupos de individuos.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		<strong>Consecuencia</strong>: Una expulsión permanente de cualquier tipo de
-		interacción pública con la comunidad del proyecto.
-	</p>
-	<div class='mb-8 mt-12 flex flex-col-reverse xl:mt-24 xl:flex-row xl:justify-between'>
-		<h3
-			id='atribucion'
-			class='text-2xl font-bold text-white'
-		>
-		Atribución
-		</h3>
-		<Icons.attribution />
-	</div>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Este Código de Conducta es una adaptación del <a
-			class='underline'
-			target='_blank'
-			href='https://www.contributor-covenant.org'>Contributor Covenant</a
-		>, versión 2.0, disponible en <a
-			class='underline break-words'
-			target='_blank'
-			href='https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html'
-		>https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html</a
-		>
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Las Guías de Impacto en la Comunidad están inspiradas en la <a
-			class='underline'
-			target='_blank'
-			href='https://github.com/mozilla/diversity'
-		>escalera de aplicación del código de conducta de Mozilla</a
-		>.
-	</p>
-	<p class='mb-8 text-white/90 max-w-xl'>
-		Para respuestas a las preguntas frecuentes de este código de conducta,
-		consulta las FAQ en
-		<a class='underline' target='_blank' href='https://www.contributor-covenant.org/faq'
-		>https://www.contributor-covenant.org/faq</a
-		>. Hay traducciones disponibles en <a
-			class='underline'
-			target='_blank'
-			href='https://www.contributor-covenant.org/translations'
-		>https://www.contributor-covenant.org/translations
-		</a>
-	</p>
+		<Paragraph>
+			<strong>Impacto en la Comunidad</strong>: Demostrar un patrón sistemático de
+			incumplimientos de los estándares de la comunidad, incluyendo conductas
+			inapropiadas prolongadas en el tiempo, acoso de individuos, o agresiones o
+			menosprecio a grupos de individuos.
+		</Paragraph>
+		<Paragraph>
+			<strong>Consecuencia</strong>: Una expulsión permanente de cualquier tipo de
+			interacción pública con la comunidad del proyecto.
+		</Paragraph>
+	</ArticleCoc>
+
+	<ArticleCoc id='atribucion' title='Atribución'>
+		<Icons.attribution slot='icon'/>
+		<Paragraph>
+			Este Código de Conducta es una adaptación del <a
+				class='underline'
+				target='_blank'
+				href='https://www.contributor-covenant.org'>Contributor Covenant</a
+			>, versión 2.0, disponible en <a
+				class='underline break-words'
+				target='_blank'
+				href='https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html'
+			>https://www.contributor-covenant.org/es/version/2/0/code_of_conduct.html</a
+			>
+		</Paragraph>
+		<Paragraph>
+			Las Guías de Impacto en la Comunidad están inspiradas en la <a
+				class='underline'
+				target='_blank'
+				href='https://github.com/mozilla/diversity'
+			>escalera de aplicación del código de conducta de Mozilla</a
+			>.
+		</Paragraph>
+		<Paragraph>
+			Para respuestas a las preguntas frecuentes de este código de conducta,
+			consulta las FAQ en
+			<a class='underline' target='_blank' href='https://www.contributor-covenant.org/faq'
+			>https://www.contributor-covenant.org/faq</a>. Hay traducciones disponibles en <a
+				class='underline'
+				target='_blank'
+				href='https://www.contributor-covenant.org/translations'
+			>https://www.contributor-covenant.org/translations
+			</a>
+		</Paragraph>
+	</ArticleCoc>
+
 </section>
