@@ -59,7 +59,7 @@ const SOCIAL_NETWORKS_LINKS = [
 ]
 ---
 
-<aside class='flex flex:row items-center text-primary px-4 pb-20 justify-between xl:sticky xl:top-24 xl:flex-col'>
+<aside class='flex flex:row items-center text-primary px-4 xl:pb-20 justify-between xl:sticky xl:top-0 xl:flex-col lg:min-h-screen just'>
 	<a href='/#top'>
 		<Icons.logo class='w-32 animate-zoomIn' />
 	</a>
@@ -72,7 +72,7 @@ const SOCIAL_NETWORKS_LINKS = [
 		<MenuIcon />
 	</label>
 
-	<nav id='navbar' class='last absolute top-0 left-0 right-0 z-40 hidden min-h-screen py-24 px-8 bg-black/30 peer-checked:block backdrop-blur-lg text-center xl:px-0 xl:flex xl:flex-col xl:min-h-min xl:backdrop-blur-0 xl:mt-24 transition-all'>
+	<nav id='navbar' class='last absolute top-0 left-0 right-0 z-40 hidden min-h-screen py-12 px-8 bg-black/30 peer-checked:block backdrop-blur-lg text-center xl:px-0 xl:flex xl:flex-col xl:min-h-min xl:backdrop-blur-0 xl:mt-24 transition-all'>
 		<ul class='flex flex-col gap-y-8 mb-20'>
 			{
 				NAVIGATION_LINKS.map(({ disabled, title, href }) => {

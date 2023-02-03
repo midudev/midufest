@@ -1,25 +1,7 @@
 import { useUser } from '@hooks/useUser'
 import { atcb_action as addToCalendar } from 'add-to-calendar-button'
 import { Icons } from '@components/Icons'
-import type { ComponentChildren } from 'preact'
-
-const Button = (
-	{ children, onClick, type } :
-	{ children: ComponentChildren, onClick: () => void, type?: string }
-) => {
-	const buttonClasses = type === 'twitter'
-		? 'text-white border-[#1da1f2]/80 bg-[#1da1f2] hover:bg-[#1da1f2]/60 hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50'
-		: 'text-primary hover:border-primary border-white/10 bg-zinc-900/90'
-
-	return (
-		<button
-			class={`${buttonClasses} text-sm transition inline-flex items-center  font-semibold border rounded-lg px-6 py-3`}
-			onClick={onClick}
-		>
-			{children}
-		</button>
-	)
-}
+import { Button } from './Button'
 
 export function TicketButtons () {
 	const { user } = useUser()
