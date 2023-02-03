@@ -13,7 +13,17 @@ import { Countdown } from '@components/Countdown'
 
 	<div class='text-center mt-10 flex justify-center flex-col'>
 		<h2 class='animate-fadeIn animate-delay-200 italic font-extrabold text-5xl lg:text-6xl text-white -rotate-[10deg]'>21 de marzo</h2>
-		<h3 class='animate-fadeIn animate-delay-200 italic text-white/80 text-lg -rotate-[10deg]'>17:00 horas GMT+1 <span class='px-2'>·</span> Streaming en <a class='italic font-semibold text-purple-400 hover:underline -rotate-[10deg]' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
+		<h3 class='animate-fadeIn animate-delay-200 italic text-white/80 text-lg -rotate-[10deg]'>
+			<script is:inline>
+				const d = new Date(1679414400000)
+				const date = d.toLocaleTimeString('es-ES', { hour12: false, hour: '2-digit' })
+				const diff = new Date().getTimezoneOffset() / 60 * -1
+				const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
+				const selfScript = document.currentScript
+				selfScript.parentNode.innerHTML = `${date}:00 ${gmt}`
+				/* eslint-disable no-trailing-spaces */
+			</script>
+			<span class='px-2'>·</span> Streaming en <a class='italic font-semibold text-purple-400 hover:underline -rotate-[10deg]' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
 			twitch.tv/midudev</a>
 		</h3>
 
