@@ -11,6 +11,9 @@ module.exports = withAnimations({
 			},
 			sans: {
 				fontFamily: ['Montserrat', ...defaultTheme.fontFamily.sans]
+			},
+			screens: {
+				medium: '468px'
 			}
 		}
 	},
