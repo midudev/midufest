@@ -64,12 +64,12 @@ const SOCIAL_NETWORKS_LINKS = [
 	<input type='checkbox' id='menu' hidden class='peer' />
 	<label
 		for='menu'
-		class='bg-zinc-500/30 w-14 h-14 border-zinc-500 flex items-center justify-center rounded-full border relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
+		class='bg-zinc-500/30 w-14 h-14 border-zinc-500 flex items-center justify-center rounded-full border fixed right-4 bottom-4 xl:relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
 	>
 		<MenuIcon />
 	</label>
 
-	<nav id='navbar' class='min-h-screen last absolute top-0 left-0 right-0 z-40 hidden py-12 px-8 bg-black/30 peer-checked:block backdrop-blur-lg text-center xl:min-h-0 xl:relative xl:px-0 xl:flex xl:flex-col xl:min-h-min xl:backdrop-blur-0 xl:mt-24 transition-all'>
+	<nav id='navbar' class='min-h-screen last absolute top-0 left-0 right-0 z-40 hidden py-12 px-8 bg-black/30 peer-checked:flex backdrop-blur-lg text-center xl:min-h-0 xl:relative xl:px-0 xl:flex justify-center flex-col xl:backdrop-blur-0 xl:mt-2 transition-all'>
 		<ul class='flex flex-col gap-y-8 mb-20'>
 			{
 				NAVIGATION_LINKS.map(({ disabled, title, href }) => {

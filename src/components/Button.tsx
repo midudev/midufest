@@ -1,8 +1,8 @@
 import type { ComponentChildren } from 'preact'
 
 export const Button = (
-	{ children, onClick, type, href } :
-	{ children: ComponentChildren, onClick?: () => void, type?: string, href?: string }
+	{ className, children, onClick, type, href } :
+	{ className?: string, children: ComponentChildren, onClick?: () => void, type?: string, href?: string }
 ) => {
 	const buttonClasses = type === 'twitter'
 		? 'text-white border-[#1da1f2]/80 bg-[#1da1f2] hover:bg-[#1da1f2]/60 hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50'
@@ -15,7 +15,7 @@ export const Button = (
 	return (
 		<ElementToRender
 			href={href}
-			class={`${buttonClasses} ${defaultClass}`}
+			class={`${className} ${buttonClasses} ${defaultClass}`}
 			onClick={onClick}
 		>
 			{children}
