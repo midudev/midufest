@@ -3,30 +3,38 @@ import Link from './Link.astro'
 import MenuIcon from '@icons/Menu.astro'
 import { Icons } from '@components/Icons'
 
-const NAVIGATION_LINKS = [{
-	title: 'Inicio',
-	href: '#top'
-}, {
-	title: 'Patrocinadores',
-	href: '#sponsors',
-	disabled: true
-}, {
-	title: 'Speakers',
-	href: '#speakers'
-}, {
-	title: 'Agenda',
-	href: '#agenda'
-}, {
-	title: 'Tickets',
-	href: '#ticket'
-}, {
-	title: 'Contacto',
-	href: '#contact',
-	disabled: true
-}, {
-	title: 'Código de conducta',
-	href: '#coc'
-}]
+const NAVIGATION_LINKS = [
+	{
+		title: 'Inicio',
+		href: '#top'
+	},
+	{
+		title: 'Patrocinadores',
+		href: '#sponsors',
+		disabled: true
+	},
+	{
+		title: 'Speakers',
+		href: '#speakers'
+	},
+	{
+		title: 'Agenda',
+		href: '#agenda'
+	},
+	{
+		title: 'Tickets',
+		href: '#ticket'
+	},
+	{
+		title: 'Contacto',
+		href: '#contact',
+		disabled: true
+	},
+	{
+		title: 'Código de conducta',
+		href: '#coc'
+	}
+]
 
 const SOCIAL_NETWORKS_LINKS = [
 	{
@@ -53,29 +61,36 @@ const SOCIAL_NETWORKS_LINKS = [
 		icon: 'twitter-icon.svg',
 		href: 'https://twitter.com/midudev'
 	}
-]
+];
 ---
 
-<aside class='flex flex:row items-center justify-between xl:justify-center text-primary px-4 xl:pb-20 xl:sticky xl:top-0 xl:flex-col xl:min-h-screen'>
-	<a href='/#top'>
-		<Icons.logo class='w-32 animate-zoomIn' />
+<aside
+	class='flex flex:row items-center justify-between xl:justify-center text-primary px-4 xl:pb-20 xl:sticky xl:top-0 xl:flex-col xl:min-h-screen'
+>
+	<a href='/#top' class='w-full h-full xl:h-auto py-6'>
+		<Icons.logo class='xl:w-32 w-72 lg:w-80 h-full mx-auto animate-zoomIn' />
 	</a>
 
 	<input type='checkbox' id='menu' hidden class='peer' />
 	<label
 		for='menu'
-		class='bg-zinc-500/30 w-14 h-14 border-zinc-500 flex items-center justify-center rounded-full border fixed right-4 bottom-4 xl:relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
+		class='bg-zinc-800 w-14 h-14 border-zinc-500 flex items-center justify-center rounded-full border fixed right-4 top-4 xl:relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
 	>
 		<MenuIcon />
 	</label>
 
-	<nav id='navbar' class='min-h-screen last absolute top-0 left-0 right-0 z-40 hidden py-12 px-8 bg-black/30 peer-checked:flex backdrop-blur-lg text-center xl:min-h-0 xl:relative xl:px-0 xl:flex justify-center flex-col xl:backdrop-blur-0 xl:mt-2 transition-all'>
+	<nav
+		id='navbar'
+		class='min-h-screen last absolute top-0 left-0 right-0 z-40 hidden py-12 px-8 bg-black/30 peer-checked:flex backdrop-blur-lg text-center xl:min-h-0 xl:relative xl:px-0 xl:flex justify-center flex-col xl:backdrop-blur-0 xl:mt-1 transition-all'
+	>
 		<ul class='flex flex-col gap-y-8 mb-20'>
 			{
 				NAVIGATION_LINKS.map(({ disabled, title, href }) => {
-					return <li>
-						<Link disabled={disabled} href={href} title={title} />
-					</li>
+					return (
+						<li>
+							<Link disabled={disabled} href={href} title={title} />
+						</li>
+					)
 				})
 			}
 		</ul>
@@ -83,16 +98,25 @@ const SOCIAL_NETWORKS_LINKS = [
 		<div class='flex flex-row items-center justify-center gap-4 py-2'>
 			{
 				SOCIAL_NETWORKS_LINKS.map(({ component: Icon, href, title }) => {
-					return <a class='text-white hover:scale-125 transition-all hover:text-primary' href={href} target='_blank' rel='noopener noreferrer'>
-						<span aria-label={title}>
-							<Icon />
-						</span>
-					</a>
+					return (
+						<a
+							class='text-white hover:scale-125 transition-all hover:text-primary'
+							href={href}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<span aria-label={title}>
+								<Icon />
+							</span>
+						</a>
+					)
 				})
 			}
 		</div>
 
-		<span class='text-white opacity-70'>Desarrollado moviendo las manitas 👋</span>
+		<span class='text-white opacity-70'
+		>Desarrollado moviendo las manitas 👋</span
+		>
 	</nav>
 </aside>
 
@@ -104,9 +128,8 @@ let direction = 'up'
 let prevYPosition = 0
 
 const setScrollDirection = () => {
-	direction = document.documentElement.scrollTop > prevYPosition
-		? 'down'
-		: 'up'
+	direction =
+			document.documentElement.scrollTop > prevYPosition ? 'down' : 'up'
 
 	prevYPosition = document.documentElement.scrollTop
 }
@@ -141,7 +164,8 @@ const onIntersect = (entries) => {
 
 		prevYPosition = document.documentElement.scrollTop
 
-		const target = direction === 'down' ? getTargetSection(entry) : entry.target
+		const target =
+				direction === 'down' ? getTargetSection(entry) : entry.target
 
 		if (shouldUpdate(entry)) {
 			updateLink(target)
@@ -163,7 +187,7 @@ const shouldUpdate = (entry) => {
 
 const observer = new IntersectionObserver(onIntersect, options)
 
-sections.forEach(section => {
+sections.forEach((section) => {
 	observer.observe(section)
 })
 </script>
@@ -173,7 +197,7 @@ const menuCheckbox = document.getElementById('menu')
 const mediaQuery = window.matchMedia('(min-width: 1024px)') // Breakpoint lg
 
 const $navbar = document.querySelector('#navbar')
-$navbar.querySelectorAll('a').forEach(anchor => {
+$navbar.querySelectorAll('a').forEach((anchor) => {
 	anchor.addEventListener('click', (_event) => {
 		menuCheckbox.checked = false
 		if (document.body.style.overflowY === 'hidden') {
@@ -193,9 +217,7 @@ function hideOverFlow (value) {
 }
 
 menuCheckbox.addEventListener('change', (e) =>
-	e.target.checked
-		?	hideOverFlow(true)
-		: hideOverFlow(false)
+	e.target.checked ? hideOverFlow(true) : hideOverFlow(false)
 )
 
 mediaQuery.addEventListener('change', (e) => {
