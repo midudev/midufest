@@ -24,12 +24,14 @@ export function TicketButtons () {
 				startDate: '2023-03-21',
 				startTime: '17:00',
 				endDate: '2023-03-21',
-				endTime: '22:00'
+				endTime: '22:00',
+				timeZone: 'Europe/Madrid'
 			}, {
 				startDate: '2023-03-22',
 				startTime: '17:00',
 				endDate: '2023-03-22',
-				endTime: '22:00'
+				endTime: '22:00',
+				timeZone: 'Europe/Madrid'
 			}]
 		}
 
