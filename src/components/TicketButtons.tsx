@@ -10,7 +10,7 @@ export function TicketButtons () {
 		const config = {
 			name: 'miduFest - Conferencia de programación y desarrollo',
 			description:
-				'Entra a https://twitch.tv/midudev para disfrutar totalmente gratis de la conferencia.',
+				'Entra a [url]https://twitch.tv/midudev[/url] para disfrutar totalmente gratis de la conferencia.',
 			startDate: '2023-03-21',
 			startTime: '17:00',
 			endDate: '2023-03-21',
