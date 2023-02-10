@@ -26,7 +26,13 @@ export const useUser = () => {
 			setUser(newUser)
 		}
 
+		const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+			if (event === 'SIGNED_OUT') setUser(null)
+		})
+
 		getUser()
+
+		return () => subscription?.unsubscribe()
 	}, [])
 
 	return { user }

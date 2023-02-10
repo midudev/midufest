@@ -3,7 +3,6 @@ import { supabase } from 'src/utils/supabase'
 
 export function TicketAnonymous () {
 	const handleClick = async () => {
-		console.log('click')
 		await supabase.auth.signInWithOAuth({ provider: 'github' })
 	}
 
@@ -14,11 +13,9 @@ export function TicketAnonymous () {
 
 	return (
 		<>
-			<div class='absolute w-full h-full flex justify-center items-center top-10'>
-				<button class='text-5xl p-4 border border-primary rounded-full' onClick={handleClick}>
+			<button class='hover:bg-black hover:text-white font-bold text-4xl px-8 py-4 border-4 hover:border-primary rounded-full transition bg-primary border-black text-black shadow-2xl shadow-black' onClick={handleClick}>
 				Conseguir ticket
-				</button>
-			</div>
+			</button>
 		</>
 	)
 }
