@@ -13,13 +13,24 @@ export function TicketButtons () {
 				'Entra a https://twitch.tv/midudev para disfrutar totalmente gratis de la conferencia.',
 			startDate: '2023-03-21',
 			startTime: '17:00',
-			endDate: '2023-03-21',
+			endDate: '2023-03-22',
 			endTime: '22:00',
 			timeZone: 'Europe/Madrid',
 			location: 'https://midufest.com',
 			buttonStyle: 'round',
 			language: 'es',
-			options: ['Google', 'Apple', 'iCal']
+			options: ['Google', 'Apple', 'iCal'],
+			dates: [{
+				startDate: '2023-03-21',
+				startTime: '17:00',
+				endDate: '2023-03-21',
+				endTime: '22:00'
+			}, {
+				startDate: '2023-03-22',
+				startTime: '17:00',
+				endDate: '2023-03-22',
+				endTime: '22:00'
+			}]
 		}
 
 		addToCalendar(config, e.target)
