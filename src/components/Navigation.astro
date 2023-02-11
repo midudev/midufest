@@ -81,7 +81,7 @@ const SOCIAL_NETWORKS_LINKS = [
 
 	<nav
 		id='navbar'
-		class='min-h-screen last absolute top-0 left-0 right-0 z-40 hidden py-12 px-8 bg-black/30 peer-checked:flex backdrop-blur-lg text-center xl:min-h-0 xl:relative xl:px-0 xl:flex justify-center flex-col xl:backdrop-blur-0 xl:mt-1 transition-all'
+		class='min-h-screen last fixed top-0 left-0 pointer-events-none opacity-0 peer-checked:opacity-100 peer-checked:pointer-events-auto right-0 z-40 flex py-12 px-8 bg-black/30 backdrop-blur-lg text-center xl:opacity-100 xl:pointer-events-auto xl:min-h-0 xl:relative xl:px-0 justify-center flex-col xl:backdrop-blur-0 xl:mt-1 transition-opacity xl:transition-all'
 	>
 		<ul class='flex flex-col gap-y-8 mb-20'>
 			{
@@ -208,12 +208,7 @@ $navbar.querySelectorAll('a').forEach((anchor) => {
 
 /** @param {boolean} value */
 function hideOverFlow (value) {
-	if (value) {
-		window.scrollTo(0, 0)
-		document.body.style.overflowY = 'hidden'
-	} else {
-		document.body.style.overflowY = 'auto'
-	}
+	return document.body.style.overflowY = value ? 'hidden' : 'auto'
 }
 
 menuCheckbox.addEventListener('change', (e) =>
