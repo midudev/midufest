@@ -7,7 +7,9 @@ module.exports = withAnimations({
 	theme: {
 		extend: {
 			colors: {
-				primary: '#FFD200'
+				primary: '#FFD200',
+				// color 111111 con 50% de opacidad
+				gray: 'rgba(17, 17, 17, 0.5)'
 			},
 			sans: {
 				fontFamily: ['Montserrat', ...defaultTheme.fontFamily.sans]
