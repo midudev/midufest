@@ -13,7 +13,7 @@ export function TicketAnonymous () {
 
 	return (
 		<>
-			<button class='hover:bg-black hover:text-white font-bold text-4xl px-8 py-4 border-4 hover:border-primary rounded-full transition bg-primary border-black text-black shadow-2xl shadow-black' onClick={handleClick}>
+			<button class='hover:bg-black hover:text-white font-bold tablet:text-4xl text-xl px-8 py-4 border-4 hover:border-primary rounded-full transition bg-primary border-black text-black shadow-2xl shadow-black' onClick={handleClick}>
 				Conseguir ticket
 			</button>
 		</>
