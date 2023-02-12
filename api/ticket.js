@@ -12,8 +12,8 @@ export default async (req, res) => {
 		background: '#fff',
 		fitTo: {
 			mode: 'width',
-			value: 2400,
-		},
+			value: 2400
+		}
 	}
 
 	const inter = await fetch('https://midu.dev/inter.ttf').then((res) =>
@@ -62,9 +62,9 @@ export default async (req, res) => {
 				name: 'Inter',
 				data: inter,
 				weight: 400,
-				style: 'normal',
-			},
-		],
+				style: 'normal'
+			}
+		]
 	})
 
 	const resvg = new Resvg(svg, opts)
