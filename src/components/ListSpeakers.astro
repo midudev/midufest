@@ -1,0 +1,30 @@
+---
+const { speakers } = Astro.props
+
+const speakersGrouped = speakers.reduce((acc, speaker, index) => {
+	if (index % 2 === 0) {
+		acc.push([speaker])
+	} else {
+		acc[acc.length - 1].push(speaker)
+	}
+	return acc
+}, [])
+
+---
+
+<ul class='text-[24px] laptop:text-[40px] -rotate-[7deg] laptop:-rotate-[10deg] w-100% laptop:w-[840px]'>
+	{
+		speakersGrouped.map((speakers, index) => (
+			<li class='flex flex-col tablet:flex-row gap-x-10 justify-center laptop:leading-[1.12]'>
+				<strong class='hover:text-white cursor-pointer relative  text-primary tablet:before:absolute tablet:before:-right-[26px] tablet:before:top-2/4 tablet:before:-translate-y-2/4 tablet:before:h-2 tablet:before:w-2 laptop:before:w-3 laptop:before:h-3 tablet:before:bg-primary tablet:before:rounded-full'>
+					{speakers[0]}
+				</strong>
+				<strong class='hover:text-white cursor-pointer text-primary'>
+					{speakers[1]}
+				</strong>
+			</li>
+		))
+	}
+</ul>
+
+<!-- PARA ESTE COMPONENTE SOLO ES NECESARIO PASAR LA LISTA DE SPEAKERS, ESTE MISMO YA SE ENCARGA DE AGRUPARLOS -->

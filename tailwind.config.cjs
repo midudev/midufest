@@ -17,7 +17,8 @@ module.exports = withAnimations({
 			screens: {
 				medium: '468px',
 				mobile: '411px',
-				tablet: '721px'
+				tablet: '721px',
+				laptop: '890px'
 			}
 		}
 	},
