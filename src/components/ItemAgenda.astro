@@ -1,0 +1,30 @@
+---
+const { hour, title, speaker, emoji } = Astro.props
+
+const localHour = new Date(`2023-03-21T${hour}:00Z`)
+const zone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
+const hourFormatted = localHour.toLocaleString('es-ES', {
+	timeZone: zone,
+	hour: 'numeric',
+	minute: 'numeric'
+});
+---
+
+<div
+	class={`w-full border-[#222222] border-[1px] mobile:grid mobile:grid-cols-[40px_minmax(100%,_1fr)] tablet:grid-cols-[60px_minmax(100%,_1fr)] gap-x-4 px-8 mobile:px-14 rounded-lg ${
+		speaker ? 'bg-gray py-6' : 'bg-[#00AAFF] py-1'
+	}`}
+>
+	<span class={` text-right ${hour ? 'tablet:text-[24px]' : 'text-[30px]'}`}
+	>{hour ? hourFormatted : emoji}</span
+	>
+	<div class='flex flex-col justify-center w-full pr-8'>
+		<strong
+			class={` text-[16px] max-w-[280px] mobile:max-w-full text-left break-words overflow-hidden ${
+				speaker ? 'text-primary tablet:text-[24px]' : 'text-black'
+			}`}>{title}</strong
+		>
+		{speaker && <span class='max-w-[280px] mobile:max-w-full'>{speaker}</span>}
+	</div>
+</div>
