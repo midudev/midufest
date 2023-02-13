@@ -2,6 +2,8 @@ import { useUser } from '@hooks/useUser'
 import { atcb_action as addToCalendar } from 'add-to-calendar-button'
 import { Icons } from '@components/Icons'
 import { Button } from './Button'
+import domtoimage from 'dom-to-image'
+import { supabase } from '..//utils/supabase'
 
 export function TicketButtons () {
 	const { user } = useUser()
@@ -12,7 +14,7 @@ export function TicketButtons () {
 			description:
 				'Entra a [url]https://twitch.tv/midudev[/url] para disfrutar totalmente gratis de la conferencia.',
 			startDate: '2023-03-21',
-			startTime: '18:00',
+			startTime: '17:00',
 			endDate: '2023-03-22',
 			endTime: '22:00',
 			timeZone: 'Europe/Madrid',
@@ -22,13 +24,13 @@ export function TicketButtons () {
 			options: ['Google', 'Apple', 'iCal'],
 			dates: [{
 				startDate: '2023-03-21',
-				startTime: '18:00',
+				startTime: '17:00',
 				endDate: '2023-03-21',
 				endTime: '22:00',
 				timeZone: 'Europe/Madrid'
 			}, {
 				startDate: '2023-03-22',
-				startTime: '18:00',
+				startTime: '17:00',
 				endDate: '2023-03-22',
 				endTime: '22:00',
 				timeZone: 'Europe/Madrid'
@@ -54,15 +56,29 @@ export function TicketButtons () {
 		}
 	}
 
-	const handleTwitterShare = () => {
+	const handleTwitterShare = async () => {
 		if (user?.username) {
 			const text = `¡Ya tengo mi ENTRADA para la #MiduFest!
 Conferencia de Desarrollo y Programación Web.
 
 ¡Consigue el tuyo totalmente gratis! ⇩ https://midufest.com/ticket/${user.username}`
 
-			window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`)
+			// window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`)
+			const capture = await handleCaptureTicket()
+			console.log(capture)
 		}
+	}
+
+	const handleCaptureTicket = async () => {
+		const capture = await domtoimage.toPng(document.querySelector('#user-ticket'), { quality: 0.95 })
+		const res = await fetch(capture)
+		const blob = await res.blob()
+		const file = new File([blob], `${user.username}.png`, { type: 'image/png' })
+
+		const storage = supabase.storage.from('tickets')
+		const { data, error } = await storage.upload(`${user.username}.png`, file)
+
+		return data || error
 	}
 
 	if (!user) return null
