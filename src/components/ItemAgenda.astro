@@ -11,8 +11,8 @@ const hourFormatted = localHour.toLocaleString('es-ES', {
 });
 ---
 
-<div
-	class={`w-full border-[#222222] border-[1px] mobile:grid mobile:grid-cols-[40px_minmax(100%,_1fr)] tablet:grid-cols-[60px_minmax(100%,_1fr)] gap-x-4 px-8 mobile:px-14 rounded-lg ${
+<article
+	class={`hover:scale-105 hover:contrast-150 transition cursor-crosshair w-full border-[#222222] border-[1px] flex gap-x-4 px-8 mobile:px-14 rounded-lg ${
 		speaker ? 'bg-gray py-6' : 'bg-[#00AAFF] py-1'
 	}`}
 >
@@ -27,4 +27,4 @@ const hourFormatted = localHour.toLocaleString('es-ES', {
 		>
 		{speaker && <span class='max-w-[280px] mobile:max-w-full'>{speaker}</span>}
 	</div>
-</div>
+</article>
