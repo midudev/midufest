@@ -1,0 +1,19 @@
+---
+import Link from '@components/Link.astro'
+import PatrocinadorBox from '@components/PatrocinadorBox.astro'
+import SectionTitle from '@components/SectionTitle.astro';
+---
+
+<section id='sponsors' class='break-words text-white py-24 mx-auto max-w-prose md:px-2 min-h-screen mt-28'>
+	<SectionTitle
+		title='Patrocinadores' />
+
+	<div class='flex flex-row gap-8'>
+		<PatrocinadorBox img='twitch' href='https://twitch.tv/midudev' />
+	</div>
+
+	<div class='flex flex-col gap-x-8 justify-center text-center pt-20'>
+		<h3 class='text-xl text-center font-bold italic'>Estamos buscando patrocinadores:</h3>
+		<Link className='italic' href='mailto:hi@midu.dev' title='¡Quiero patrocinar la conferencia!' isExternal />
+	</div>
+</section>
