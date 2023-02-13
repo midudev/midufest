@@ -1,0 +1,9 @@
+---
+const { img, href, size } = Astro.props
+---
+
+<article class=' flex justify-center w-1/3'>
+	<a class='group p-10 bg-white/10 border border-white/10 rounded-xl hover:bordr-white/30 hover:bg-white/20 transition' href={`${href}.webp`} target='_blank' rel='noopener noreferrer nofollow'>
+		<img class='group-hover:grayscale-0 group-hover:scale-105 group grayscale transition-all' src={`/${img}.webp`} alt={`Logo de la empresa ${img}`} />
+	</a>
+</article>
