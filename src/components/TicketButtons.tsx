@@ -68,7 +68,7 @@ Conferencia de Desarrollo y Programación Web.
 	if (!user) return null
 
 	return (
-		<footer class='flex justify-center items-center mt-10 gap-x-2'>
+		<footer class='flex flex-col gap-y-2 mobile:flex-row justify-center items-center mt-10 gap-x-2'>
 			<Button onClick={handleAddCalendar}>Añadir al calendario</Button>
 			<Button onClick={handleCopyLink}>Copiar enlace</Button>
 			<Button type='twitter' onClick={handleTwitterShare}>
