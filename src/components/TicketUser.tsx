@@ -111,7 +111,7 @@ export function TicketUser () {
 								{isUserLogged ? '#00001' : '#00000'}
 							</strong>
 						</div>
-						<div class='italic absolute left-2/4 -translate-x-2/4 bottom-[50px] tablet:top-[200px] tablet:translate-x-0 tablet:left-[234px] w-[400px] mx-auto flex flex-col tablet:flex-row items-center justify-center text-center tablet:text-right -rotate-[10deg] gap-x-4'>
+						<div class='italic absolute left-2/4 -translate-x-2/4 bottom-[50px] tablet:top-[200px] tablet:translate-x-0 tablet:left-[234px] w-[75%] mobile:w-[400px] mx-auto flex flex-col tablet:flex-row items-center justify-center text-center tablet:text-right -rotate-[10deg] gap-x-4'>
 							<div class='flex flex-col text-center tablet:text-right max-w-[180px] tablet:max-w-full'>
 								<span data-atropos-offset='2' class='opacity-70 text-sm tablet:text-base'>
 									{name}
