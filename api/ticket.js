@@ -3,10 +3,9 @@ import satori from 'satori'
 import { html } from 'satori-html'
 
 export default async (req, res) => {
-	// get query string from req
-	const { query } = req
-	// transform to object query
-	const { title, tag } = query
+	const { username } = req
+
+	console.log(username)
 
 	const opts = {
 		background: '#fff',
@@ -20,37 +19,38 @@ export default async (req, res) => {
 		res.arrayBuffer()
 	)
 
-	const titleFontSize = title.length > 50 ? '85px' : '96px'
-
 	const markup = html`<div
-		style="display: flex; position: relative; flex-direction: column; width: 100vw; height: 100vh;"
+		tw="flex bg-black w-full h-full items-center justify-center relative"
 	>
 		<img
-			src="https://midu.dev/images/blur-background-01.jpg"
-			style="position:
-    absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-    object-position: center;"
+			src="http://localhost:3000/ticket-background.svg"
+			width="979"
+			height="642"
+			style="width: 979px; height: 642px;"
 		/>
+		<div tw="absolute inset-0 -top-[200px]  flex items-center justify-center">
+			<img
+				src="http://localhost:3000/ticket-logo.svg"
+				width="672"
+				height="168"
+				style="width: 672px; height: 168px;"
+			/>
+		</div>
+
 		<div
-			style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; padding: 64px;"
+			tw="flex absolute italic absolute inset-0 top-[235px] max-w-full text-base mx-auto flex-row text-center gap-x-2 justify-center text-white text-xl font-bold"
+			style="transform: rotate(-10deg);"
 		>
-			<img
-				id="logo"
-				src="https://midu.dev/images/solo-logo.png"
-				alt="Solo logo"
-				style="width: 150px;"
-			/>
-			<img
-				id="tag"
-				src="https://midu.dev/images/tags/${tag}.png"
-				alt="${tag} logo"
-				style="width: 400px; position: absolute; bottom: -70px; right: -70px; opacity: .4;"
-			/>
-			<h1
-				style="font-size: ${titleFontSize}; color: #111; text-align: left; line-height: 105%; letter-spacing: -2px; padding-right: 32px;"
-			>
-				${title}
-			</h1>
+			<strong>21 y 22 marzo</strong>
+			<span tw="opacity-70 flex">
+				Streaming en
+				<a
+					tw="font-semibold text-purple-400 hover:underline ml-1"
+					href="https://twitch.tv/midudev"
+				>
+					twitch.tv/midudev
+				</a>
+			</span>
 		</div>
 	</div>`
 
