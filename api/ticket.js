@@ -78,7 +78,7 @@ export default async (req, res) => {
 			>
 				<img
 					tw="w-21 h-21 objet-cover rounded-full"
-					src="https://unavatar.io/github/${ogImage}"
+					src="https://unavatar.io/github/${username}"
 				/>
 			</figure>
 		</div>
