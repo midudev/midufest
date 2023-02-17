@@ -5,8 +5,6 @@ import { html } from 'satori-html'
 export default async (req, res) => {
 	const { username } = req
 
-	console.log(username)
-
 	const opts = {
 		background: '#fff',
 		fitTo: {
@@ -15,22 +13,27 @@ export default async (req, res) => {
 		}
 	}
 
-	const inter = await fetch('https://midu.dev/inter.ttf').then((res) =>
-		res.arrayBuffer()
-	)
+	const [fontExtraBold, fontRegular] = await Promise.all([
+		fetch('https://midufest.com/Montserrat-ExtraBoldItalic.ttf').then((res) =>
+			res.arrayBuffer()
+		),
+		fetch('https://midufest.com/Montserrat-Italic.ttf').then((res) =>
+			res.arrayBuffer()
+		)
+	])
 
 	const markup = html`<div
 		tw="flex bg-black w-full h-full items-center justify-center relative"
 	>
 		<img
-			src="http://localhost:3000/ticket-background.svg"
+			src="http://midufest.com/ticket-background.svg"
 			width="979"
 			height="642"
 			style="width: 979px; height: 642px;"
 		/>
 		<div tw="absolute inset-0 -top-[200px]  flex items-center justify-center">
 			<img
-				src="http://localhost:3000/ticket-logo.svg"
+				src="http://midufest.com/ticket-logo.svg"
 				width="672"
 				height="168"
 				style="width: 672px; height: 168px;"
@@ -38,11 +41,12 @@ export default async (req, res) => {
 		</div>
 
 		<div
-			tw="flex absolute italic absolute inset-0 top-[235px] max-w-full text-base mx-auto flex-row text-center gap-x-2 justify-center text-white text-xl font-bold"
+			tw="flex absolute italic absolute inset-0 top-[335px] max-w-full text-base mx-auto flex-row text-center justify-center text-white text-3xl"
 			style="transform: rotate(-10deg);"
 		>
-			<strong>21 y 22 marzo</strong>
-			<span tw="opacity-70 flex">
+			<strong tw="mr-2 font-bold">21 y 22 marzo</strong>
+			<span tw="mr-2">·</span>
+			<span tw="opacity-80 flex mr-2">
 				Streaming en
 				<a
 					tw="font-semibold text-purple-400 hover:underline ml-1"
@@ -52,6 +56,32 @@ export default async (req, res) => {
 				</a>
 			</span>
 		</div>
+
+		<div
+			tw="italic absolute left-55 bottom-[80px] flex flex-col justify-center text-center items-center text-white italic"
+			style="transform: rotate(-10deg);"
+		>
+			<span tw="opacity-70 text-3xl"> Ticket number </span>
+			<strong tw="text-5xl"> #00001 </strong>
+		</div>
+
+		<div
+			tw="italic absolute left-2/4 bottom-[170px] right-0 w-[400px] mx-auto flex flex-row items-center justify-center text-right text-white text-xl"
+			style="transform: rotate(-10deg);"
+		>
+			<div tw="flex flex-col text-right max-w-full text-3xl">
+				<span tw="opacity-70"> Miguel Ángel Durán </span>
+				<strong tw="font-semibold"> @midudev </strong>
+			</div>
+			<figure
+				tw="ml-4 rounded-full w-22 h-22 bg-white flex justify-center items-center"
+			>
+				<img
+					tw="w-21 h-21 objet-cover rounded-full"
+					src="https://unavatar.io/github/${ogImage}"
+				/>
+			</figure>
+		</div>
 	</div>`
 
 	const svg = await satori(markup, {
@@ -59,10 +89,28 @@ export default async (req, res) => {
 		height: 630,
 		fonts: [
 			{
-				name: 'Inter',
-				data: inter,
+				name: 'Montserrat',
+				data: fontRegular,
 				weight: 400,
 				style: 'normal'
+			},
+			{
+				name: 'Montserrat',
+				data: fontExtraBold,
+				weight: 800,
+				style: 'normal'
+			},
+			{
+				name: 'Montserrat',
+				data: fontRegular,
+				weight: 400,
+				style: 'italic'
+			},
+			{
+				name: 'Montserrat',
+				data: fontExtraBold,
+				weight: 800,
+				style: 'italic'
 			}
 		]
 	})
