@@ -5,7 +5,7 @@ const getURL = () => {
 
 	const isProduction = import.meta.env.MODE === 'production'
 	let url = isProduction
-		? 'https://midufest.com/'
+		? 'https://midufest.com/?ticket=midudev#ticket'
 		: 'http://localhost:3000/?ticket=midudev#ticket'
 		
 	// Make sure to including trailing `/`.

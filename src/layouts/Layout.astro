@@ -9,7 +9,6 @@ import '@fontsource/montserrat/900-italic.css'
 
 import Navigation from '@components/Navigation.astro'
 import Background from '@components/sections/Background.astro'
-import ticket from 'api/ticket.js'
 
 export interface Props {
 	ticketUserName: string;
@@ -75,3 +74,17 @@ const ogImage = ticketUserName
 		background: #000;
 	}
 </style>
+
+<script>
+	// detect if url has query string ticket
+	const urlParams = new URLSearchParams(window.location.search)
+	const ticket = urlParams.get('ticket')
+
+	setTimeout(() => {
+		// scroll to ticket hash
+		if (ticket) {
+			window.location.hash = '#ticket'
+		}
+		document.getElementById('ticket').scrollIntoView({ behavior: 'smooth' })
+	}, 200)
+</script>
