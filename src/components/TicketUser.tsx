@@ -29,13 +29,14 @@ let el: AtroposInstance
 export function TicketUser () {
 	const width = useWidth()
 	const [date, setDate] = useState<string>('')
-	const { user } = useUser()
+	const { user, ticket } = useUser()
 
-	const isUserLogged = !!user
+	const isUserLogged = !!user && !!ticket
 
-	const name = user?.name ?? DEFAULT_USER_NAME
+	const name = ticket?.user_fullname ?? DEFAULT_USER_NAME
 	const image = user?.avatar ?? DEFAULT_USER_IMAGE
-	const userName = user?.username ?? DEFAULT_USER_USERNAME
+	const userName = ticket?.user_name ?? DEFAULT_USER_USERNAME
+	const ticketNumber = ticket?.number?.toString().padStart(5, '0') ?? '00000'
 
 	useEffect(() => {
 		const d = new Date(1679414400000)
@@ -108,7 +109,7 @@ export function TicketUser () {
 								Ticket number
 							</span>
 							<strong data-atropos-offset='10' class='tablet:text-2xl'>
-								{isUserLogged ? '#00001' : '#00000'}
+								#{ticketNumber}
 							</strong>
 						</div>
 						<div class='italic absolute left-2/4 -translate-x-2/4 bottom-[50px] tablet:top-[200px] tablet:translate-x-0 tablet:left-[234px] w-[75%] mobile:w-[400px] mx-auto flex flex-col tablet:flex-row items-center justify-center text-center tablet:text-right -rotate-[10deg] gap-x-4'>
