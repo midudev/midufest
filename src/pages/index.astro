@@ -6,9 +6,11 @@ import Ticket from '@components/sections/Ticket.astro'
 import Speakers from '@components/sections/Speakers.astro'
 import Agenda from '@components/sections/Agenda.astro'
 import Sponsors from '@components/sections/Sponsors.astro'
+
+const ticketUserName = Astro.url.searchParams.get('ticket') ?? '';
 ---
 
-<Layout title='midufest - ¡La fiesta de la programación!'>
+<Layout title='midufest - ¡La fiesta de la programación!' ticketUserName={ticketUserName}>
 	<Landing />
 	<Sponsors />
 	<Speakers />

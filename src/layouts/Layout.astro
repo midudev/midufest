@@ -9,12 +9,18 @@ import '@fontsource/montserrat/900-italic.css'
 
 import Navigation from '@components/Navigation.astro'
 import Background from '@components/sections/Background.astro'
+import ticket from 'api/ticket.js'
 
 export interface Props {
+	ticketUserName: string;
 	title: string;
 }
 
-const { title } = Astro.props;
+const { title, ticketUserName } = Astro.props
+
+const ogImage = ticketUserName
+	? `https://midufest.com/api/ticket/${ticketUserName}`
+	: 'https://midufest.com/og.jpg'
 ---
 
 <!DOCTYPE html>
@@ -23,7 +29,24 @@ const { title } = Astro.props;
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='generator' content={Astro.generator} />
+		<meta name='description' content='Conferencia de Programación y Desarrollo en Twitch' />
+		<meta name='keywords' content='programacion, desarrollo, javascript, typescript, conferencia, midudev' />
+		<meta name='author' content='Miguel Ángel Durán' />
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:site' content='@midudev' />
+		<meta name='twitter:creator' content='@midudev' />
+		<meta name='twitter:title' content='MiduFest: Conferencia de Programación y Desarrollo' />
+		<meta name='twitter:description' content='Conferencia de Programación y Desarrollo en Twitch' />
+		<meta name='twitter:image' content={ogImage} />
+		<meta name='og:image' content={ogImage} />
+		<meta name='og:title' content='MiduFest: Conferencia de Programación y Desarrollo' />
+		<meta name='og:description' content='Conferencia de Programación y Desarrollo en Twitch' />
+		<meta name='og:url' content='https://midufest.com' />
+		<meta name='og:site_name' content='MiduFest' />
+		<meta name='og:type' content='website' />
+		<meta name='og:locale' content='es_ES' />
+		<meta name='robots' content='index, follow' />
+		<meta name='googlebot' content='index, follow' />
 		<title>{title}</title>
 	</head>
 	<body>
