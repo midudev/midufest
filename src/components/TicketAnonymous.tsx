@@ -1,9 +1,26 @@
 import { useEffect } from 'preact/hooks'
 import { supabase } from 'src/utils/supabase'
 
+const getURL = () => {
+
+	const isProduction = import.meta.env.MODE === 'production'
+	let url = isProduction
+		? 'https://midufest.com/'
+		: 'http://localhost:3000/?ticket=midudev#ticket'
+		
+	// Make sure to including trailing `/`.
+	url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+	return url
+}
+
 export function TicketAnonymous () {
 	const handleClick = async () => {
-		await supabase.auth.signInWithOAuth({ provider: 'github' })
+		await supabase.auth.signInWithOAuth({
+			provider: 'github',
+			options: {
+				redirectTo: getURL()
+			}
+		})
 	}
 
 	useEffect(() => {
