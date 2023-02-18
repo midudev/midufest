@@ -9,14 +9,18 @@ type User = {
 	uuid: string
 }
 
-async function getTicketForUser (userId: string) {
-	const { data } = await supabase.from('tickets').select().eq('user_id', userId).single()
+async function getTicketForUser (userName: string) {
+	// read query param ticket from url
+	const urlParams = new URLSearchParams(window.location.search)
+	const userNameToUse = urlParams.get('ticket') ?? userName
+
+	const { data } = await supabase.from('tickets').select().eq('user_name', userNameToUse).single()
 	return data
 }
 
 export async function createTicketForUser (user: User) {
 	// check if user has ticket
-	const ticket = await getTicketForUser(user.uuid)
+	const ticket = await getTicketForUser(user.username)
 	if (ticket) return ticket
 
 	const { data, error } = await supabase.from('tickets').insert(

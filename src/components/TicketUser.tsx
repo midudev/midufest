@@ -34,7 +34,9 @@ export function TicketUser () {
 	const isUserLogged = !!user && !!ticket
 
 	const name = ticket?.user_fullname ?? DEFAULT_USER_NAME
-	const image = user?.avatar ?? DEFAULT_USER_IMAGE
+	const image = ticket?.user_name
+		? `https://github.com/${ticket.user_name}.png`
+		: DEFAULT_USER_IMAGE
 	const userName = ticket?.user_name ?? DEFAULT_USER_USERNAME
 	const ticketNumber = ticket?.number?.toString().padStart(5, '0') ?? '00000'
 
