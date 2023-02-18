@@ -18,7 +18,7 @@ export interface Props {
 const { title, ticketUserName } = Astro.props
 
 const ogImage = ticketUserName
-	? `https://midufest.com/api/ticket/${ticketUserName}`
+	? `https://midufest.com/api/ticket?username=${ticketUserName}`
 	: 'https://midufest.com/og.jpg'
 ---
 
