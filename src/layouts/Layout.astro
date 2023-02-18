@@ -84,7 +84,7 @@ const ogImage = ticketUserName
 		// scroll to ticket hash
 		if (ticket) {
 			window.location.hash = '#ticket'
+			document.getElementById('ticket')?.scrollIntoView({ behavior: 'smooth' })
 		}
-		document.getElementById('ticket').scrollIntoView({ behavior: 'smooth' })
 	}, 200)
 </script>
