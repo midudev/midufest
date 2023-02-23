@@ -40,7 +40,14 @@ export const useUser = () => {
 
 	useEffect(() => {
 		async function getTicket () {
-			if (user) {
+			// read query param ticket from url
+			const urlParams = new URLSearchParams(window.location.search)
+			const ticketUser = urlParams.get('ticket')
+
+			if (ticketUser) {
+				const ticket = await getTicketForUser(ticketUser)
+				setTicket(ticket)
+			} else if (user) {
 				const ticket = await createTicketForUser(user)
 				setTicket(ticket)
 			}
