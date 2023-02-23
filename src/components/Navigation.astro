@@ -79,10 +79,10 @@ const SOCIAL_NETWORKS_LINKS = [
 	>
 		<ul class='flex flex-col gap-y-8 mb-20'>
 			{
-				NAVIGATION_LINKS.map(({ disabled, title, href }) => {
+				NAVIGATION_LINKS.map(({ title, href }) => {
 					return (
 						<li>
-							<Link disabled={disabled} href={href} title={title} />
+							<Link href={href} title={title} />
 						</li>
 					)
 				})
@@ -202,7 +202,7 @@ $navbar.querySelectorAll('a').forEach((anchor) => {
 
 /** @param {boolean} value */
 function hideOverFlow (value) {
-	return document.body.style.overflowY = value ? 'hidden' : 'auto'
+	document.body.style.overflowY = value ? 'hidden' : 'auto'
 }
 
 menuCheckbox.addEventListener('change', (e) =>
