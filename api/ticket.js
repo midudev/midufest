@@ -149,11 +149,15 @@ export default async (req, res) => {
 	const pngData = resvg.render()
 	const pngBuffer = pngData.asPng()
 
-	supabase.storage.from('tickets').upload(`public/${username}.png`, pngBuffer, {
-		cacheControl: '7200',
-		upsert: true
-	})
-
 	res.setHeader('Content-Type', 'image/png')
 	res.status(200).send(pngBuffer)
+
+	const { data: storageData, error: errorData } = await supabase.storage
+		.from('tickets')
+		.upload(`public/${username}.png`, pngBuffer, {
+			cacheControl: '7200',
+			upsert: true
+		})
+
+	console.log({ storageData, errorData })
 }
