@@ -43,6 +43,7 @@ export function TicketButtons () {
 			navigator.clipboard.writeText(
 				`https://midufest.com?ticket=${user.username}`
 			)
+
 			import('https://cdn.skypack.dev/wc-toast').then(({ toast }) =>
 				toast('Enlace copiado al portapapeles', {
 					duration: 2000,

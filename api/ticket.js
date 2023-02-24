@@ -16,6 +16,21 @@ export default async (req, res) => {
 		return
 	}
 
+	// try to get the ticket from supabase storage
+	const imageResponse = await fetch(
+		`https://nlzixaklwhopmuyycyva.supabase.co/storage/v1/object/public/tickets/public/${username}.png`
+	)
+
+	if (imageResponse.ok) {
+		res.writeHead(200, {
+			'Content-Type': 'image/jpeg',
+			'Cache-Control':
+				'public, immutable, no-transform, s-maxage=9999, max-age=9999'
+		})
+
+		res.end(Buffer.from(await imageResponse.arrayBuffer()))
+	}
+
 	const { data, error } = await supabase
 		.from('tickets')
 		.select('number,user_name,user_fullname')
@@ -29,7 +44,7 @@ export default async (req, res) => {
 		return
 	}
 
-	console.log(ticket)
+	console.log({ ticket })
 
 	const ticketNumber = ticket.number?.toString().padStart(5, '0')
 
@@ -106,7 +121,7 @@ export default async (req, res) => {
 				tw="ml-4 rounded-full w-22 h-22 bg-white flex justify-center items-center"
 			>
 				<img
-					tw="w-21 h-21 object-cover rounded-full"
+					tw="w-21 h-21 rounded-full"
 					src="https://github.com/${username}.png"
 				/>
 			</figure>
@@ -149,9 +164,6 @@ export default async (req, res) => {
 	const pngData = resvg.render()
 	const pngBuffer = pngData.asPng()
 
-	res.setHeader('Content-Type', 'image/png')
-	res.status(200).send(pngBuffer)
-
 	const { data: storageData, error: errorData } = await supabase.storage
 		.from('tickets')
 		.upload(`public/${username}.png`, pngBuffer, {
@@ -159,5 +171,6 @@ export default async (req, res) => {
 			upsert: true
 		})
 
-	console.log({ storageData, errorData })
+	res.setHeader('Content-Type', 'image/png')
+	res.status(200).send(pngBuffer)
 }
