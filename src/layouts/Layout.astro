@@ -79,12 +79,15 @@ const ogImage = ticketUserName
 	// detect if url has query string ticket
 	const urlParams = new URLSearchParams(window.location.search)
 	const ticket = urlParams.get('ticket')
+	const sessionTicket = sessionStorage.getItem('ticket')
+	console.log({ sessionTicket })
 
 	setTimeout(() => {
 		// scroll to ticket hash
-		if (ticket) {
+		if (ticket || sessionTicket) {
+			sessionStorage.removeItem('ticket')
 			window.location.hash = '#ticket'
-			document.getElementById('ticket')?.scrollIntoView({ behavior: 'smooth' })
+			document.getElementById('ticket')?.scrollIntoView({ behavior: 'auto' })
 		}
 	}, 200)
 </script>

@@ -4,8 +4,8 @@ import { supabase } from 'src/utils/supabase'
 const getURL = () => {
 	const isProduction = import.meta.env.MODE === 'production'
 	let url = isProduction
-		? 'https://midufest.com/?ticket'
-		: 'http://localhost:3000/?ticket'
+		? 'https://midufest.com'
+		: 'http://localhost:3000'
 
 	// Make sure to including trailing `/`.
 	url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
@@ -14,6 +14,10 @@ const getURL = () => {
 
 export function TicketAnonymous () {
 	const handleClick = async () => {
+		try {
+			sessionStorage.setItem('ticket', 'true')
+		} catch (e) {}
+
 		await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
