@@ -2,12 +2,11 @@ import { useEffect } from 'preact/hooks'
 import { supabase } from 'src/utils/supabase'
 
 const getURL = () => {
-
 	const isProduction = import.meta.env.MODE === 'production'
 	let url = isProduction
-		? 'https://midufest.com/?ticket=midudev#ticket'
-		: 'http://localhost:3000/?ticket=midudev#ticket'
-		
+		? 'https://midufest.com#ticket'
+		: 'http://localhost:3000#ticket'
+
 	// Make sure to including trailing `/`.
 	url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
 	return url
