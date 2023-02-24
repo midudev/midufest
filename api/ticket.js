@@ -1,9 +1,37 @@
 import { Resvg } from '@resvg/resvg-js'
 import satori from 'satori'
 import { html } from 'satori-html'
+import { createClient } from '@supabase/supabase-js'
+
+export const supabase = createClient(
+	process.env.PUBLIC_SUPABASE_URL,
+	process.env.PUBLIC_SUPABASE_ANON_KEY
+)
 
 export default async (req, res) => {
-	const { username } = req
+	const { username } = req.query
+
+	if (!username) {
+		res.status(400).send('Bad request')
+		return
+	}
+
+	const { data, error } = await supabase
+		.from('tickets')
+		.select('number,user_name,user_fullname')
+		.eq('user_name', username)
+
+	const ticket = data?.[0]
+
+	if (error || ticket === null) {
+		console.log(error)
+		res.status(500).send('Ticket not found')
+		return
+	}
+
+	console.log(ticket)
+
+	const ticketNumber = ticket.number?.toString().padStart(5, '0')
 
 	const opts = {
 		background: '#fff',
@@ -23,13 +51,14 @@ export default async (req, res) => {
 	])
 
 	const markup = html`<div
-		tw="flex bg-black w-full h-full items-center justify-center relative"
+		tw="flex bg-black w-full h-full items-center justify-center relative shadow-xl"
+		style={{ backgroundImage: "url('https://midufest.com/stars.png')" }} 
 	>
 		<img
 			src="http://midufest.com/ticket-background.svg"
 			width="979"
-			height="642"
-			style="width: 979px; height: 642px;"
+			height="622"
+			style="width: 979px; height: 622px;"
 		/>
 		<div tw="absolute inset-0 -top-[200px]  flex items-center justify-center">
 			<img
@@ -49,7 +78,7 @@ export default async (req, res) => {
 			<span tw="opacity-80 flex mr-2">
 				Streaming en
 				<a
-					tw="font-semibold text-purple-400 hover:underline ml-1"
+					tw="font-semibold text-[#d863ff] hover:underline ml-1"
 					href="https://twitch.tv/midudev"
 				>
 					twitch.tv/midudev
@@ -62,7 +91,7 @@ export default async (req, res) => {
 			style="transform: rotate(-10deg);"
 		>
 			<span tw="opacity-70 text-3xl"> Ticket number </span>
-			<strong tw="text-5xl"> #00001 </strong>
+			<strong tw="text-5xl"> #${ticketNumber} </strong>
 		</div>
 
 		<div
@@ -70,15 +99,15 @@ export default async (req, res) => {
 			style="transform: rotate(-10deg);"
 		>
 			<div tw="flex flex-col text-right max-w-full text-3xl">
-				<span tw="opacity-70"> Miguel Ángel Durán </span>
-				<strong tw="font-semibold"> @midudev </strong>
+				<span tw="opacity-70"> ${ticket.user_fullname} </span>
+				<strong tw="font-semibold"> @${ticket.user_name} </strong>
 			</div>
 			<figure
 				tw="ml-4 rounded-full w-22 h-22 bg-white flex justify-center items-center"
 			>
 				<img
-					tw="w-21 h-21 objet-cover rounded-full"
-					src="https://unavatar.io/github/${username}"
+					tw="w-21 h-21 object-cover rounded-full"
+					src="https://github.com/${username}.png"
 				/>
 			</figure>
 		</div>
@@ -119,6 +148,11 @@ export default async (req, res) => {
 
 	const pngData = resvg.render()
 	const pngBuffer = pngData.asPng()
+
+	supabase.storage.from('tickets').upload(`public/${username}.png`, pngBuffer, {
+		cacheControl: '7200',
+		upsert: true
+	})
 
 	res.setHeader('Content-Type', 'image/png')
 	res.status(200).send(pngBuffer)
