@@ -1,5 +1,4 @@
 ---
-import { Button } from '@components/Button.jsx'
 import { Icons } from '@components/Icons.jsx'
 import SectionTitle from '@components/SectionTitle.astro'
 
@@ -10,14 +9,29 @@ const speakers = [
 		title: 'Por confirmar',
 		description: 'Por confirmar',
 		twitter: 'teffcode',
-		github: ''
+		github: 'teffcode'
+	},
+	{
+		id: 'davideast',
+		name: 'David East',
+		title: 'Rendimiento web: JavaScript y todos los errores que estamos cometiendo',
+		twitter: '_davideast',
+		github: 'davideast',
+		description: '¿Qué tan rápido debe cargar su sitio web? ¿Quizás 5 o 6 segundos? ¿Cómo lo sabes realmente? ¿Por qué tu web va lenta? Cometemos muchos errores al desarrollar sitios con JavaScript. En esta charla, exploraremos algunos de los problemas más comunes y no tan comunes en los sitios web. También aprenderemos cómo podemos monitorear los datos reales provenientes de usuarios reales para tomar mejores decisiones.'
+	},
+	{
+		id: 'irene',
+		name: 'Irene M Morgado',
+		title: 'Encontrar trabajo dev en tiempos loquísimos',
+		description: 'El mundo está fatal. Cada día tenemos nuevas noticias de inestabilidad en proyectos y empresas tech, grandes y pequeñas. La realidad está cambiando y hay nuevos enfoques en procesos de selección, proyectos de engagement y de cultura. En esta charla hablaremos de cómo identificar proyectos que valgan la pena y cómo hacer valer nuestro CV en organizaciones que nos interesen.',
+		twitter: 'https://twitter.com/IrnMM'
 	},
 	{
 		id:	'bolonio',
 		name: 'Adrian Bolonio',
 		photo: 'bolonio.webp',
-		title: 'Por confirmar',
-		description: 'Por confirmar',
+		title: '¡Este código es una ruina: estrategias de accesibilidad web!',
+		description: 'Es tu primera semana en tu nuevo trabajo, empiezas a investigar el código y te das cuenta de que el producto es complemente inaccesible. Y piensas: ¿Por dónde empiezo? ¿Cuál es la mejor estrategia para convertir un producto maduro en un producto accesible? ¿Qué herramientas uso?',
 		twitter: 'bolonio',
 		github: 'bolonio'
 	}
@@ -54,16 +68,16 @@ const speakers = [
 			<>
 				<article id={`${speaker.id}`} class='h-screen w-full'>
 					<div class='h-full relative flex flex-col flex-start items-start justify-start'>
-						<img class='w-2/3 h-auto drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]' alt={`Fotografía de ${speaker.name}`} src={`/${speaker.id}.png`} />
-						<footer class='absolute bottom-28'>
+						<img class='w-2/3 h-auto drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]' alt={`Fotografía de ${speaker.name}`} src={`/${speaker.id}.webp`} />
+						<footer class='absolute bottom-0'>
 							<h3 class='[text-shadow:0_0_20px_black] uppercase text-primary text-9xl leading-[.8em] -rotate-[10deg] italic font-black text-center'>{speaker.name}</h3>
-							<div class='w-80 text-left float-right'>
+							<div class='text-left mt-20'>
 								<h4 class='font-bold text-3xl text-left mb-4'>{speaker.title}</h4>
 								<p class='text-white/80 text-lg'>{speaker.description}</p>
 								<div class='flex gap-x-4 text-white mt-4'>
-									<a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de GitHub de ${speaker.name}`}>
+									{speaker.github && <a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de GitHub de ${speaker.name}`}>
 										<Icons.github />
-									</a>
+									</a>}
 									<a href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de twitter de ${speaker.name}`}>
 										<Icons.twitter />
 									</a>
