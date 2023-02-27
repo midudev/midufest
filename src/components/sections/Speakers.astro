@@ -61,10 +61,10 @@ const speakers = [
 								<h4 class='font-bold text-3xl text-left mb-4'>{speaker.title}</h4>
 								<p class='text-white/80 text-lg'>{speaker.description}</p>
 								<div class='flex gap-x-4 text-white mt-4'>
-									<a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer'>
+									<a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de GitHub de ${speaker.name}`}>
 										<Icons.github />
 									</a>
-									<a href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer'>
+									<a href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de twitter de ${speaker.name}`}>
 										<Icons.twitter />
 									</a>
 								</div>
