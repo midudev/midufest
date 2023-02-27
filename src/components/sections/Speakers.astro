@@ -8,15 +8,15 @@ const speakers = [
 		name: 'Estefany Aguilar',
 		title: 'Por confirmar',
 		description: 'Por confirmar',
-		twitter: 'https://twitter.com/teffcode',
-		github: 'https://github.com/teffcode'
+		twitter: 'teffcode',
+		github: 'teffcode'
 	},
 	{
 		id: 'davideast',
 		name: 'David East',
 		title: 'Rendimiento web: JavaScript y todos los errores que estamos cometiendo',
-		twitter: 'https://twitter.com/_davideast',
-		github: 'https://github.com/davideast',
+		twitter: '_davideast',
+		github: 'davideast',
 		description: '¿Qué tan rápido debe cargar su sitio web? ¿Quizás 5 o 6 segundos? ¿Cómo lo sabes realmente? ¿Por qué tu web va lenta? Cometemos muchos errores al desarrollar sitios con JavaScript. En esta charla, exploraremos algunos de los problemas más comunes y no tan comunes en los sitios web. También aprenderemos cómo podemos monitorear los datos reales provenientes de usuarios reales para tomar mejores decisiones.'
 	},
 	{
@@ -24,23 +24,23 @@ const speakers = [
 		name: 'Irene M Morgado',
 		title: 'Encontrar trabajo dev en tiempos loquísimos',
 		description: 'El mundo está fatal. Cada día tenemos nuevas noticias de inestabilidad en proyectos y empresas tech, grandes y pequeñas. La realidad está cambiando y hay nuevos enfoques en procesos de selección, proyectos de engagement y de cultura. En esta charla hablaremos de cómo identificar proyectos que valgan la pena y cómo hacer valer nuestro CV en organizaciones que nos interesen.',
-		twitter: 'https://twitter.com/IrnMM'
+		twitter: 'IrnMM'
 	},
 	{
 		id:	'bolonio',
 		name: 'Adrian Bolonio',
 		title: '¡Este código es una ruina: estrategias de accesibilidad web!',
 		description: 'Es tu primera semana en tu nuevo trabajo, empiezas a investigar el código y te das cuenta de que el producto es complemente inaccesible. Y piensas: ¿Por dónde empiezo? ¿Cuál es la mejor estrategia para convertir un producto maduro en un producto accesible? ¿Qué herramientas uso?',
-		twitter: 'https://twitter.com/bolonio',
-		github: 'https://github.com/bolonio'
+		twitter: 'bolonio',
+		github: 'bolonio'
 	},
 	{
 		id: 'carmen',
 		name: 'Carmen Ansio',
 		title: 'Back to the future CSS edition',
 		description: 'Acompañadme en este viaje para descubrir las últimas funcionalidades de CSS. Haremos una revisión de las nuevas propiedades y de las que veremos este 2023.',
-		twitter: 'https://twitter.com/carmenansio',
-		github: 'https://github.com/carmenansio'
+		twitter: 'carmenansio',
+		github: 'carmenansio'
 	}
 ]
 ---
@@ -82,10 +82,10 @@ const speakers = [
 								<h4 class='font-bold text-3xl text-left mb-4'>{speaker.title}</h4>
 								<p class='text-white/80 text-lg'>{speaker.description}</p>
 								<div class='flex gap-x-4 text-white mt-4'>
-									{speaker.github && <a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer'>
+									{speaker.github && <a href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de GitHub de ${speaker.name}`}>
 										<Icons.github />
 									</a>}
-									<a href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer'>
+									<a href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de twitter de ${speaker.name}`}>
 										<Icons.twitter />
 									</a>
 								</div>
