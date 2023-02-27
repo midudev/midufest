@@ -9,52 +9,9 @@ type User = {
 	uuid: string
 }
 
-async function getTicketForUser (userName: string) {
-	// read query param ticket from url
-	const urlParams = new URLSearchParams(window.location.search)
-	const userNameToUse = urlParams.get('ticket') ?? userName
-
-	const { data } = await supabase.from('tickets').select().eq('user_name', userNameToUse).single()
-	return data
-}
-
-export async function createTicketForUser (user: User) {
-	// check if user has ticket
-	const ticket = await getTicketForUser(user.username)
-	if (ticket) return ticket
-
-	const { data, error } = await supabase.from('tickets').insert(
-		{
-			user_id: user.uuid,
-			user_name: user.username,
-			user_fullname: user.name
-		}).select()
-
-	console.log(error)
-	return data
-}
-
 export const useUser = () => {
 	const [user, setUser] = useState<User | null>(null)
-	const [ticket, setTicket] = useState(null)
 
-	useEffect(() => {
-		async function getTicket () {
-			// read query param ticket from url
-			const urlParams = new URLSearchParams(window.location.search)
-			const ticketUser = urlParams.get('ticket')
-
-			if (ticketUser) {
-				const ticket = await getTicketForUser(ticketUser)
-				setTicket(ticket)
-			} else if (user) {
-				const ticket = await createTicketForUser(user)
-				setTicket(ticket)
-			}
-		}
-
-		getTicket()
-	}, [user])
 
 	useEffect(() => {
 		async function getUser () {
@@ -82,5 +39,5 @@ export const useUser = () => {
 		return () => subscription?.unsubscribe()
 	}, [])
 
-	return { user, ticket }
+	return { user }
 }

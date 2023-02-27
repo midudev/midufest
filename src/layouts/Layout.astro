@@ -80,14 +80,15 @@ const ogImage = ticketUserName
 	const urlParams = new URLSearchParams(window.location.search)
 	const ticket = urlParams.get('ticket')
 	const sessionTicket = sessionStorage.getItem('ticket')
-	console.log({ sessionTicket })
+
+	const scroll = window.location.search.includes('?ticket')
 
 	setTimeout(() => {
 		// scroll to ticket hash
-		if (ticket || sessionTicket) {
+		if (scroll || ticket || sessionTicket) {
 			sessionStorage.removeItem('ticket')
 			window.location.hash = '#ticket'
 			document.getElementById('ticket')?.scrollIntoView({ behavior: 'auto' })
 		}
-	}, 200)
+	}, 500)
 </script>

@@ -3,13 +3,9 @@ import { supabase } from 'src/utils/supabase'
 
 const getURL = () => {
 	const isProduction = import.meta.env.MODE === 'production'
-	let url = isProduction
-		? 'https://midufest.com'
-		: 'http://localhost:3000'
-
-	// Make sure to including trailing `/`.
-	url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
-	return url
+	return isProduction
+		? 'https://midufest.com/?ticket'
+		: 'http://localhost:3000/?ticket'
 }
 
 export function TicketAnonymous () {
