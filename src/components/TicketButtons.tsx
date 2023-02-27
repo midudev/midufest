@@ -60,7 +60,7 @@ export function TicketButtons () {
 			const text = `¡Ya tengo mi ENTRADA para la #MiduFest!
 Conferencia de Desarrollo y Programación Web.
 
-¡Consigue el tuyo totalmente gratis! ⇩ https://midufest.com/?ticket=${user.username}`
+¡Consigue el tuyo totalmente gratis! ⇩ https://www.midufest.com/?ticket=${user.username}`
 
 			window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`)
 		}
