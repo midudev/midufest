@@ -1,0 +1,59 @@
+---
+import { Icons } from '@components/Icons.jsx'
+
+type Speaker = {
+	id: string
+	name: string
+	title: string
+	description: string
+	twitter: string
+	github: string
+}
+
+const { speaker } = Astro.props as { speaker: Speaker }
+---
+
+<article id={`${speaker.id}`} class='relative'>
+	<img
+		class='h-auto max-h-[500px] md:max-h-[650px] relative top-32 object-contain w-full md:w-2/3 drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]'
+		alt={`Fotografía de ${speaker.name}`}
+		src={`/${speaker.id}.webp`}
+	/>
+	<h3
+		class='relative bottom-20 md:bottom-48 [text-shadow:0_0_20px_black] uppercase text-primary text-6xl md:text-9xl leading-[.8em] -rotate-[10deg] italic font-black text-center'
+	>
+		{speaker.name}
+	</h3>
+	<footer class='relative md:bottom-20'>
+		<div class='text-left'>
+			<h4 class='font-bold text-3xl text-left mb-4'>
+				{speaker.title}
+			</h4>
+			<p class='text-white/80 text-lg'>{speaker.description}</p>
+			<div class='flex gap-x-4 text-white mt-4'>
+				{
+					speaker.github && (
+						<a
+							class='hover:text-primary hover:scale-150 transition'
+							href={`https://github.com/${speaker.github}`}
+							target='_blank'
+							rel='noopener noreferrer'
+							aria-label={`Perfil de GitHub de ${speaker.name}`}
+						>
+							<Icons.github />
+						</a>
+					)
+				}
+				<a
+					class='hover:text-primary hover:scale-150 transition'
+					href={`https://twitter.com/${speaker.twitter}`}
+					target='_blank'
+					rel='noopener noreferrer'
+					aria-label={`Perfil de twitter de ${speaker.name}`}
+				>
+					<Icons.twitter />
+				</a>
+			</div>
+		</div>
+	</footer>
+</article>
