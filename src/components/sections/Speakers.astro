@@ -82,10 +82,10 @@ const speakers = [
 								<h4 class='font-bold text-3xl text-left mb-4'>{speaker.title}</h4>
 								<p class='text-white/80 text-lg'>{speaker.description}</p>
 								<div class='flex gap-x-4 text-white mt-4'>
-									{speaker.github && <a class='hover:text-primary hover:scale-150 transition' href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer'>
+									{speaker.github && <a class='hover:text-primary hover:scale-150 transition' href={`https://github.com/${speaker.github}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de GitHub de ${speaker.name}`}>
 										<Icons.github />
 									</a>}
-									<a class='hover:text-primary hover:scale-150 transition' href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer'>
+									<a class='hover:text-primary hover:scale-150 transition' href={`https://twitter.com/${speaker.twitter}`} target='_blank' rel='noopener noreferrer' aria-label={`Perfil de twitter de ${speaker.name}`}>
 										<Icons.twitter />
 									</a>
 								</div>
