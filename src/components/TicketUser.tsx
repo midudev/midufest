@@ -1,4 +1,5 @@
 import { useUser } from '@hooks/useUser.js'
+import { useTicket } from '@hooks/useTicket.js'
 import { useEffect, useState } from 'preact/hooks'
 import { TicketAnonymous } from './TicketAnonymous.js'
 import TicketLogo from './TicketLogo.js'
@@ -29,9 +30,12 @@ let el: AtroposInstance
 export function TicketUser () {
 	const width = useWidth()
 	const [date, setDate] = useState<string>('')
-	const { user, ticket } = useUser()
+	const { user } = useUser()
+	const { ticket } = useTicket()
 
 	const isUserLogged = !!user && !!ticket
+
+	console.log({ user, ticket })
 
 	const name = ticket?.user_fullname ?? DEFAULT_USER_NAME
 	const image = ticket?.user_name
@@ -64,6 +68,8 @@ export function TicketUser () {
 		}
 
 		el?.destroy()
+
+		return () => el?.destroy?.()
 	}, [isUserLogged])
 
 	return (
