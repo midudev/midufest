@@ -15,7 +15,7 @@ const { speaker } = Astro.props as { speaker: Speaker }
 
 <article id={`${speaker.id}`} class='relative'>
 	<img
-		class='relative bottom-16 md:top-20 h-auto max-h-[500px] md:max-h-[650px] object-contain w-full md:w-2/3 drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]'
+		class='relative md:top-20 h-auto max-h-[500px] md:max-h-[650px] object-contain w-full md:w-2/3 drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]'
 		alt={`Fotografía de ${speaker.name}`}
 		src={`/${speaker.id}.webp`}
 	/>
