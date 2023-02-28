@@ -12,7 +12,8 @@
       "@icons/*": ["src/icons/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@services/*": ["src/services/*"]
+      "@services/*": ["src/services/*"],
+			"@utils/*": ["src/utils/*"]
     },
   },
 }
