@@ -23,6 +23,14 @@ const speakers = [
 			'¿Qué tan rápido debe cargar su sitio web? ¿Quizás 5 o 6 segundos? ¿Cómo lo sabes realmente? ¿Por qué tu web va lenta? Cometemos muchos errores al desarrollar sitios con JavaScript. En esta charla, exploraremos algunos de los problemas más comunes y no tan comunes en los sitios web. También aprenderemos cómo podemos monitorear los datos reales provenientes de usuarios reales para tomar mejores decisiones.'
 	},
 	{
+		id: 'lizz',
+		name: 'Lizz Parody',
+		title: 'Nuevas features en Node.js que deberías conocer',
+		description: '¡Node.js está cambiando! En esta charla veremos las nuevas features que se están implementando en Node.js y cómo podemos aprovecharlas en nuestros proyectos.',
+		twitter: 'LizzParody',
+		github: 'LizzParody'
+	},
+	{
 		id: 'irene',
 		name: 'Irene M Morgado',
 		title: 'Encontrar trabajo dev en tiempos loquísimos',
@@ -65,14 +73,6 @@ const speakers = [
 		github: 'powerhdeleon'
 	},
 	{
-		id: 'lizz',
-		name: 'Lizz Parody',
-		title: 'Nuevas features en Node.js que deberías conocer',
-		description: '¡Node.js está cambiando! En esta charla veremos las nuevas features que se están implementando en Node.js y cómo podemos aprovecharlas en nuestros proyectos.',
-		twitter: 'LizzParody',
-		github: 'LizzParody'
-	},
-	{
 		id: 'goncy',
 		name: 'Goncy Pozzo',
 		title: 'Ni estático ni dinámico, ambos. Usando Next.js cache con app directory.',
@@ -93,14 +93,14 @@ const speakers = [
 		class='py-24 flex items-center justify-center flex-col text-center gap-y-8'
 	>
 		<ul
-			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-2 text-center items-center justify-center pb-24'
+			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-2 text-center items-center justify-center pb-24 mx-0 px-4 lg:-mx-36'
 		>
 			{
 				speakers.map((speaker, index) => (
 					<>
-						<li class='inline-block'>
+						<li>
 							<a
-								class='font-black text-3xl italic text-primary hover:text-white hover:scale-125 transition uppercase inline-block hover:[text-shadow:0_0_25px_#000]'
+								class='font-black text-2xl md:text-5xl italic text-primary hover:text-white hover:scale-125 transition uppercase hover:[text-shadow:0_0_25px_#000]'
 								href={`/#${speaker.id}`}
 							>
 								{speaker.name}

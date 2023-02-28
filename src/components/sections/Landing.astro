@@ -4,16 +4,16 @@ import { Countdown } from '@components/Countdown'
 ---
 
 <section id='top' class='flex-1 min-h-auto flex flex-col justify-start xl:justify-center xl:min-h-screen'>
-	<h1 class='text-primary text-xl xl:text-[54px] leading-none text-center font-black uppercase italic -rotate-[10deg]'>
+	<h1 class='text-primary text-xl xl:text-[54px] leading-none text-center font-black uppercase italic -rotate-[10deg] mb-10'>
 		<span class='text-6xl lg:text-8xl xl:text-9xl block'>Evento</span>
 		<span class='max-w-[38rem] m-auto block'>
-			de Programación y Desarrollo
+			de Programación
 		</span>
 	</h1>
 
 	<div class='text-center mt-20 flex justify-center flex-col'>
-		<h2 class='animate-fadeIn animate-delay-200 font-extrabold text-5xl lg:text-6xl text-white'>21 y 22 de marzo</h2>
-		<h3 class='animate-fadeIn animate-delay-200 text-white/80 text-lg '>
+		<h2 class='animate-fadeIn animate-delay-200 font-extrabold text-4xl lg:text-5xl text-white'>21 y 22 de marzo</h2>
+		<h3 class='animate-fadeIn animate-delay-200 text-white/80 text-lg mt-2'>
 			<script is:inline>
 				const d = new Date(1679414400000)
 				const date = d.toLocaleTimeString('es-ES', { hour12: false, hour: '2-digit' })
@@ -33,8 +33,7 @@ import { Countdown } from '@components/Countdown'
 
 		<footer class='mt-10'>
 			<div class='flex gap-x-8 mt-4 justify-center'>
-				<Link className='italic' href='https://forms.gle/WdVHVa3x5BN3wX7c7' title='Enviar charla' isExternal />
-				<Link className='italic' href='mailto:hi@midu.dev' title='Quiero ser sponsor' isExternal />
+
 			</div>
 		</footer>
 	</div>
