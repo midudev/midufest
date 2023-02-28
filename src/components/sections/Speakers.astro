@@ -85,14 +85,14 @@ const speakers = [
 		class='py-24 flex items-center justify-center flex-col text-center gap-y-8'
 	>
 		<ul
-			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-4 text-center items-center justify-center pb-40'
+			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-2 text-center items-center justify-center pb-40'
 		>
 			{
 				speakers.map((speaker, index) => (
 					<>
 						<li class='inline-block'>
 							<a
-								class='font-black text-5xl italic text-primary hover:text-white hover:scale-125 transition uppercase inline-block hover:[text-shadow:0_0_25px_#000]'
+								class='font-black text-3xl italic text-primary hover:text-white hover:scale-125 transition uppercase inline-block hover:[text-shadow:0_0_25px_#000]'
 								href={`/#${speaker.id}`}
 							>
 								{speaker.name}
