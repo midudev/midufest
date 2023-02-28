@@ -1,5 +1,6 @@
 ---
 import SectionTitle from '@components/SectionTitle.astro'
+import type { RealtimeChannel } from '@supabase/supabase-js'
 import SpeakerCard from '@components/SpeakerCard.astro'
 
 const speakers = [
@@ -28,6 +29,14 @@ const speakers = [
 		description:
 			'El mundo está fatal. Cada día tenemos nuevas noticias de inestabilidad en proyectos y empresas tech, grandes y pequeñas. La realidad está cambiando y hay nuevos enfoques en procesos de selección, proyectos de engagement y de cultura. En esta charla hablaremos de cómo identificar proyectos que valgan la pena y cómo hacer valer nuestro CV en organizaciones que nos interesen.',
 		twitter: 'IrnMM'
+	},
+	{
+		id: 'pombo',
+		name: 'Rodrigo Pombo',
+		title: 'Exprimiendo los React Server Components: ¡Syntax Highlighting desde el servidor!',
+		description: 'Los RSC desbloquean muchas posibilidades a la hora de construir webs con React con mejor rendimiento. En esta charla te voy a enseñar cómo los estoy usando para crear una biblioteca que hace Syntax Highlighting con 0 JS en el cliente.',
+		twitter: 'pomber',
+		github: 'pomber'
 	},
 	{
 		id: 'bolonio',
@@ -83,7 +92,7 @@ const speakers = [
 					<>
 						<li class='inline-block'>
 							<a
-								class='font-black text-3xl italic text-primary hover:text-white hover:scale-125 transition uppercase inline-block hover:[text-shadow:0_0_25px_#000]'
+								class='font-black text-5xl italic text-primary hover:text-white hover:scale-125 transition uppercase inline-block hover:[text-shadow:0_0_25px_#000]'
 								href={`/#${speaker.id}`}
 							>
 								{speaker.name}
