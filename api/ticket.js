@@ -39,7 +39,7 @@ export default async (req, res) => {
 	const ticket = data?.[0]
 
 	if (error || ticket === null) {
-		console.log(error)
+		console.error('Error ticket', error)
 		res.status(500).send('Ticket not found')
 		return
 	}
