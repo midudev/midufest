@@ -1,5 +1,6 @@
 ---
 import { Countdown } from '@components/Countdown'
+import { GetTicketButton } from '@components/GetTicketButton'
 import { TicketCount } from '@components/TicketCount'
 ---
 
@@ -43,6 +44,9 @@ import { TicketCount } from '@components/TicketCount'
 						<span class='block text-sm w-full -rotate-[10deg] text-primary font-semibold left-0 italic'>tickets registados</span>
 					</div>
 				</div>
+			</div>
+			<div class='-mt-10'>
+				<GetTicketButton client:visible />
 			</div>
 		</footer>
 	</div>
