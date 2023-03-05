@@ -7,10 +7,14 @@ import SectionTitle from '@components/SectionTitle.astro';
 	<SectionTitle
 		title='Patrocinadores' />
 
-	<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+	<div class='flex flex-wrap gap-4 mb-4 justify-center items-center'>
 		<PatrocinadorBox img='softtek.webp' href='https://www.softtek.com/es-es/' />
 		<PatrocinadorBox img='twitch.webp' href='https://twitch.tv/midudev' />
 		<PatrocinadorBox img='leanmind.svg' href='https://leanmind.es/es/' />
-		<PatrocinadorBox img='rapidapi.webp' href='https://midu.link/api' />
+	</div>
+
+	<div class='flex gap-4 justify-center items-center'>
+		<PatrocinadorBox size='md' img='rapidapi.webp' href='https://midu.link/api' />
+		<PatrocinadorBox size='md' img='cohere.webp' href='https://midu.link/ia' />
 	</div>
 </section>
