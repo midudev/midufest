@@ -2,8 +2,8 @@
 const { img, href, size } = Astro.props
 ---
 
-<article class='flex justify-center items-center w-1/3'>
-	<a class='group p-8 bg-zinc-400/5 border border-white/10 rounded-xl hover:border-primary hover:bg-white/10 transition w-full h-48 flex items-center justify-center' href={href} target='_blank' rel='noopener noreferrer nofollow'>
-		<img class='group-hover:grayscale-0 group-hover:scale-110 group grayscale transition-all w-full h-auto' src={`/${img}`} alt={`Logo de la empresa ${img}`} />
+<article class='flex justify-center items-center'>
+	<a class='group p-12 sm:p-8 bg-zinc-400/5 border border-white/10 rounded-xl hover:border-primary hover:bg-white/10 transition w-full h-48 flex items-center justify-center' href={href} target='_blank' rel='noopener noreferrer nofollow'>
+		<img class='group-hover:grayscale-0 group-hover:scale-110 group grayscale transition-all h-full w-auto object-contain' src={`/${img}`} alt={`Logo de la empresa ${img}`} />
 	</a>
 </article>
