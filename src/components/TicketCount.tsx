@@ -7,10 +7,14 @@ export const TicketCount = () => {
 
 	useEffect(() => {
 		async function fetchTickets () {
-			const { count } = await supabase.from('tickets')
-				.select('*', { count: 'exact', head: true })
+			const { data } = await supabase.from('tickets')
+				.select('number')
+				.order('number', { ascending: false })
+				.limit(1)
 
-			if (count) setTickets(count)
+			const { number } = data?.[0] ?? { number: 1766 }
+
+			if (number) setTickets(number)
 		}
 		fetchTickets()
 	}, [])
