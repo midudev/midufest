@@ -11,12 +11,12 @@ export const Button = (
 	const defaultClass = 'text-sm transition inline-flex items-center  font-semibold border rounded-lg px-6 py-3'
 
 	const ElementToRender = href ? 'a' : 'button'
+	const propertiesElementRender = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : { onClick }
 
 	return (
 		<ElementToRender
-			href={href}
+			{...propertiesElementRender}
 			class={`${className} ${buttonClasses} ${defaultClass}`}
-			onClick={onClick}
 		>
 			{children}
 		</ElementToRender>
