@@ -55,7 +55,7 @@ export function TicketButtons () {
 		}
 	}
 
-	const hrefTwitterShare = user?.name && `https://twitter.com/intent/tweet?url=https://www.midufest.com/?ticket=${user.username}&text=%C2%A1Ya%20tengo%20mi%20ENTRADA%20para%20la%20%23MiduFest!%0AConferencia%20de%20Desarrollo%20y%20Programaci%C3%B3n%20Web.%0A%0A%C2%A1Consigue%20el%20tuyo%20totalmente%20gratis!%20%E2%87%A9`
+	const hrefTwitterShare = user?.username && `https://twitter.com/intent/tweet?url=https://www.midufest.com/?ticket=${user.username}&text=%C2%A1Ya%20tengo%20mi%20ENTRADA%20para%20la%20%23MiduFest!%0AConferencia%20de%20Desarrollo%20y%20Programaci%C3%B3n%20Web.%0A%0A%C2%A1Consigue%20el%20tuyo%20totalmente%20gratis!%20%E2%87%A9`
 
 	if (!user) return null
 
