@@ -7,6 +7,7 @@ type CountdownProps = {
 export const Countdown = ({ targetDate }: CountdownProps) => {
 	const { days, hours, minutes, seconds, countdownEnded } =
 		useRemainingTime(targetDate)
+
 	const time = [
 		{ label: 'Días', value: days },
 		{ label: 'Horas', value: hours },
