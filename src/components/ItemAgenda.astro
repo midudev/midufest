@@ -1,14 +1,7 @@
 ---
+import { Hour } from './Hour'
+
 const { hour, title, speaker, emoji } = Astro.props
-
-const localHour = new Date(`2023-03-21T${hour}:00Z`)
-const zone = Intl.DateTimeFormat().resolvedOptions().timeZone
-
-const hourFormatted = localHour.toLocaleString('es-ES', {
-	timeZone: zone,
-	hour: 'numeric',
-	minute: 'numeric'
-});
 ---
 
 <article
@@ -17,7 +10,7 @@ const hourFormatted = localHour.toLocaleString('es-ES', {
 	}`}
 >
 	<span class={` text-right ${hour ? 'tablet:text-[24px]' : 'text-[30px]'}`}
-	>{hour ? hourFormatted : emoji}</span
+	>{hour ? <Hour hour={hour} client:visible /> : emoji}</span
 	>
 	<div class='flex flex-col justify-center w-full pr-8'>
 		<strong
