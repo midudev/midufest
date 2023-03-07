@@ -55,16 +55,7 @@ export function TicketButtons () {
 		}
 	}
 
-	const handleTwitterShare = () => {
-		if (user?.username) {
-			const text = `¡Ya tengo mi ENTRADA para la #MiduFest!
-Conferencia de Desarrollo y Programación Web.
-
-¡Consigue el tuyo totalmente gratis! ⇩ https://www.midufest.com/?ticket=${user.username}`
-
-			window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`)
-		}
-	}
+	const hrefTwitterShare = user?.username && `https://twitter.com/intent/tweet?url=https://www.midufest.com/?ticket=${user.username}&text=%C2%A1Ya%20tengo%20mi%20ENTRADA%20para%20la%20%23MiduFest!%0AConferencia%20de%20Desarrollo%20y%20Programaci%C3%B3n%20Web.%0A%0A%C2%A1Consigue%20el%20tuyo%20totalmente%20gratis!%20%E2%87%A9`
 
 	if (!user) return null
 
@@ -72,7 +63,7 @@ Conferencia de Desarrollo y Programación Web.
 		<footer class='flex flex-col gap-y-2 mobile:flex-row justify-center items-center mt-10 gap-x-2'>
 			<Button onClick={handleAddCalendar}>Añadir al calendario</Button>
 			<Button onClick={handleCopyLink}>Copiar enlace</Button>
-			<Button type='twitter' onClick={handleTwitterShare}>
+			<Button type='twitter' href={hrefTwitterShare}>
 				<Icons.twitter class='w-4 h-4 mr-2 -ml-1' /> Compartir en Twitter
 			</Button>
 		</footer>
