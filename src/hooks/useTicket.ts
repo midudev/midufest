@@ -28,7 +28,7 @@ export async function createTicketForUser (user: User) {
 		{
 			user_id: user.uuid,
 			user_name: user.username,
-			user_fullname: user.name
+			user_fullname: user.name ?? user.username
 		}).select()
 
 	console.error(error)
