@@ -8,6 +8,7 @@ type Speaker = {
 	description: string
 	twitter: string
 	github: string
+	smallTitle: boolean
 }
 
 const { speaker } = Astro.props as { speaker: Speaker }
@@ -20,7 +21,7 @@ const { speaker } = Astro.props as { speaker: Speaker }
 		src={`/${speaker.id}.webp`}
 	/>
 	<h3
-		class='relative bottom-48 [text-shadow:0_0_20px_black] uppercase text-primary leading-[.8em] text-6xl md:leading-[.8em] md:text-9xl -rotate-[10deg] italic font-black text-center'
+		class={`relative bottom-48 [text-shadow:0_0_20px_black] uppercase text-primary ${speaker.smallTitle ? 'leading-[.8em] text-4xl md:leading-[.8em] md:text-6xl mt-20' : 'leading-[.8em] text-6xl md:leading-[.8em] md:text-9xl'} -rotate-[10deg] italic font-black text-center`}
 	>
 		{speaker.name}
 	</h3>
@@ -44,15 +45,18 @@ const { speaker } = Astro.props as { speaker: Speaker }
 						</a>
 					)
 				}
-				<a
-					class='hover:text-primary hover:scale-150 transition'
-					href={`https://twitter.com/${speaker.twitter}`}
-					target='_blank'
-					rel='noopener noreferrer'
-					aria-label={`Perfil de twitter de ${speaker.name}`}
-				>
-					<Icons.twitter />
-				</a>
+				{
+					speaker.twitter && (
+						<a
+							class='hover:text-primary hover:scale-150 transition'
+							href={`https://twitter.com/${speaker.twitter}`}
+							target='_blank'
+							rel='noopener noreferrer'
+							aria-label={`Perfil de twitter de ${speaker.name}`}
+						>
+							<Icons.twitter />
+						</a>
+					)}
 			</div>
 		</div>
 	</footer>
