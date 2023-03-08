@@ -2,7 +2,7 @@
 const { img, href, size = 'xl' } = Astro.props
 ---
 
-<article class={`flex justify-center items-center ${size === 'xl' ? 'w-full md:w-1/3' : 'w-1/2 md:w-1/4'}`}>
+<article class={`flex justify-center items-center ${size === 'xl' ? 'w-full md:w-1/2' : 'w-1/2 md:w-1/4'}`}>
 	<a class={`group p-12 sm:p-8 bg-zinc-400/5 border border-white/10 rounded-xl hover:border-primary hover:bg-white/10 transition w-full ${size === 'xl' ? 'h-48' : 'h-32'} flex items-center justify-center`} href={href} target='_blank' rel='noopener noreferrer nofollow'>
 		<img class='group-hover:grayscale-0 group-hover:scale-110 group grayscale transition-all h-full w-auto object-contain' src={`/${img}`} alt={`Logo de la empresa ${img}`} />
 	</a>
