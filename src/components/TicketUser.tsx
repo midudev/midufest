@@ -45,7 +45,7 @@ export function TicketUser () {
 	const ticketNumber = ticket?.number?.toString().padStart(5, '0') ?? '00000'
 
 	useEffect(() => {
-		const d = new Date(1679414400000)
+		const d = new Date(1679418000000)
 		const date = d.toLocaleTimeString('es-ES', {
 			hour12: false,
 			hour: '2-digit'
