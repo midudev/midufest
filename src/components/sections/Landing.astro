@@ -16,7 +16,7 @@ import { TicketCount } from '@components/TicketCount'
 		<h2 class='animate-fadeIn animate-delay-200 font-extrabold text-4xl lg:text-5xl text-white'>21 y 22 de marzo</h2>
 		<h3 class='px-8 font-semibold rounded-full bg-purple-800 text-white rounded-all items-center  justify-center animate-fadeIn animate-delay-200 text-md mt-2'>
 			<script is:inline>
-				const d = new Date(1679414400000)
+				const d = new Date(1679418000000)
 				const date = d.toLocaleTimeString('es-ES', { hour12: false, hour: '2-digit' })
 				const diff = new Date().getTimezoneOffset() / 60 * -1
 				const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
@@ -29,7 +29,7 @@ import { TicketCount } from '@components/TicketCount'
 		</h3>
 
 		<div class='m-auto mt-8 animate-fadeIn animate-delay-500'>
-			<Countdown targetDate={new Date(1679414400000)} client:visible />
+			<Countdown targetDate={new Date(1679418000000)} client:visible />
 		</div>
 
 		<footer class='mt-0'>

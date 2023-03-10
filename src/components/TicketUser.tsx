@@ -35,8 +35,6 @@ export function TicketUser () {
 
 	const isUserLogged = !!user && !!ticket
 
-	console.log({ user, ticket })
-
 	const name = ticket?.user_fullname ?? ticket?.user_name ?? DEFAULT_USER_NAME
 	const image = ticket?.user_name
 		? `https://github.com/${ticket.user_name}.png`
