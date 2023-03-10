@@ -7,26 +7,20 @@ import SectionTitle from '@components/SectionTitle.astro';
 	<SectionTitle
 		title='Patrocinadores' />
 
-	<div class='w-full flex flex-row flex-nowrap gap-4 mb-4 justify-center items-center'>
+	<div class='grid grid-cols-4 md:grid-cols-4 w-full gap-4 mb-4 justify-center items-center'>
 		<PatrocinadorBox img='softtek.webp' href='https://www.softtek.com/es-es/' />
 		<PatrocinadorBox img='autentia.webp' href='https://autentia.com' />
-	</div>
-
-	<div class='w-full flex flex-row flex-nowrap gap-4 mb-4 justify-center items-center'>
 		<PatrocinadorBox img='leanmind.svg' href='https://leanmind.es/es/' />
 		<PatrocinadorBox img='cabify.svg' href='https://cabify.careers/es/jobs?search=engineer' />
+		<PatrocinadorBox img='nttdata.webp' href='https://careers.emeal.nttdata.com/s/offer/a1J2p000009xVmGEAU/frontend-developer-foros?language=es&utm_campaign=midufest&utm_source=midudev' />
 	</div>
 
-	<div class='flex gap-4 justify-center items-center'>
+	<div class='grid grid-cols-2 md:grid-cols-3 gap-4 justify-center items-center px-10 mx-auto'>
 		<PatrocinadorBox size='md' img='warp.webp' href='https://warp.dev/?utm_campaign=warp_ai_launch&utm_source=twitch_midudev' />
 		<PatrocinadorBox size='md' img='rapidapi.webp' href='https://midu.link/api' />
 		<PatrocinadorBox size='md' img='cohere.webp' href='https://midu.link/ia' />
-	</div>
-
-	<div class='flex gap-4 justify-center items-center mt-4'>
 		<PatrocinadorBox size='md' img='codely.webp' href='https://codely.tv/pro/midudev' />
 		<PatrocinadorBox size='md' img='twitch.webp' href='https://twitch.tv/midudev' />
 		<PatrocinadorBox size='md' img='github.webp' href='https://github.com' />
-
 	</div>
 </section>
