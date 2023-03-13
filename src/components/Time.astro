@@ -1,0 +1,15 @@
+---
+const { time, showGMT = false } = Astro.props
+---
+
+<span>
+	<script is:inline define:vars={{ time, showGMT }}>
+		const d = new Date(time)
+		const date = d.toLocaleTimeString('es-ES', { hour12: false, hour: '2-digit', minute: '2-digit' })
+		const diff = new Date().getTimezoneOffset() / 60 * -1
+		const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
+		const selfScript = document.currentScript
+		selfScript.parentNode.innerHTML = `${date} ${showGMT ? gmt : ''}`
+		/* eslint-disable no-trailing-spaces */
+	</script>
+</span>

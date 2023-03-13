@@ -2,6 +2,7 @@
 import { Countdown } from '@components/Countdown'
 import { GetTicketButton } from '@components/GetTicketButton'
 import { TicketCount } from '@components/TicketCount'
+import Time from '@components/Time.astro';
 ---
 
 <section id='top' class='flex-1 min-h-auto flex flex-col justify-start xl:justify-center xl:min-h-screen'>
@@ -15,15 +16,7 @@ import { TicketCount } from '@components/TicketCount'
 	<div class='text-center mt-10 flex justify-center items-center flex-col'>
 		<h2 class='animate-fadeIn animate-delay-200 font-extrabold text-4xl lg:text-5xl text-white'>21 y 22 de marzo</h2>
 		<h3 class='px-8 font-semibold rounded-full bg-purple-800 text-white rounded-all items-center  justify-center animate-fadeIn animate-delay-200 text-md mt-2'>
-			<script is:inline>
-				const d = new Date(1679418000000)
-				const date = d.toLocaleTimeString('es-ES', { hour12: false, hour: '2-digit' })
-				const diff = new Date().getTimezoneOffset() / 60 * -1
-				const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
-				const selfScript = document.currentScript
-				selfScript.parentNode.innerHTML = `${date}:00 ${gmt}`
-				/* eslint-disable no-trailing-spaces */
-			</script>
+			<Time showGMT time={1679418000000} />
 			<span class='px-2'>·</span> Streaming en <a class='font-semibold text-primary hover:underline ' target='_blank' rel='noopener noreferrer' href='https://twitch.tv/midudev'>
 			twitch.tv/midudev</a>
 		</h3>

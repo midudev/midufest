@@ -1,16 +1,17 @@
 ---
 import { Hour } from './Hour'
+import Time from './Time.astro'
 
 const { hour, title, speaker, emoji } = Astro.props
 ---
 
 <article
-	class={`hover:scale-105 hover:contrast-150 transition cursor-crosshair w-full border-[#222222] border-[1px] flex gap-x-4 px-8 mobile:px-14 rounded-lg ${
+	class={`hover:scale-105 hover:contrast-150 transition cursor-crosshair w-full border-[#222222] border-[1px] flex gap-x-4 px-4 rounded-lg ${
 		speaker ? 'bg-gray py-6' : 'bg-[#00AAFF] py-1'
 	}`}
 >
-	<span class={` text-right ${hour ? 'tablet:text-[24px]' : 'text-[30px]'}`}
-	>{hour ? <Hour hour={hour} client:visible /> : emoji}</span
+	<span class={'text-xl flex items-center justify-center font-bold text-center w-24'}
+	>{hour ? <Time time={1679418000000} /> : emoji}</span
 	>
 	<div class='flex flex-col justify-center w-full pr-8'>
 		<strong
