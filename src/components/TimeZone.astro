@@ -1,0 +1,17 @@
+<span>
+	<script is:inline>
+function getTimeZone (zoneName = 'longOffset') {
+	// set up formatter
+	const formatter = new Intl.DateTimeFormat(undefined, {
+		timeZoneName: zoneName
+	})
+
+	// run formatter on current date
+	return formatter.formatToParts(Date.now()).find(formatted => formatted.type === 'timeZoneName').value
+}
+
+const selfScript = document.currentScript
+console.log(Intl?.DateTimeFormat?.().resolvedOptions?.())
+const timeZone = Intl?.DateTimeFormat?.().resolvedOptions?.()?.timeZone
+if (timeZone) selfScript.parentNode.innerHTML = `: ${timeZone} - ${getTimeZone()}`</script>
+</span>
