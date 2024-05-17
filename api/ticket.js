@@ -88,7 +88,7 @@ export default async (req, res) => {
 			tw="flex absolute italic absolute inset-0 top-[335px] max-w-full text-base mx-auto flex-row text-center justify-center text-white text-3xl"
 			style="transform: rotate(-10deg);"
 		>
-			<strong tw="mr-2 font-bold">21 y 22 marzo</strong>
+			<strong tw="mr-2 font-bold">28 de mayo</strong>
 			<span tw="mr-2">·</span>
 			<span tw="opacity-80 flex mr-2">
 				Streaming en

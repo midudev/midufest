@@ -1,6 +1,6 @@
 <div align="center">
 
-<h4>El 21 y 22 de marzo en <a href='https://twitch.tv/midudev'>twitch.tv/midudev</a></h4>
+<h4>El 28 de mayo en <a href='https://twitch.tv/midudev'>twitch.tv/midudev</a></h4>
 
 </div>
 

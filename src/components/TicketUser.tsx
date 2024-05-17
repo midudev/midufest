@@ -96,7 +96,7 @@ export function TicketUser () {
 						}
 
 						<div class='italic absolute inset-0 -top-[31px] tablet:top-[235px] max-w-[230px] tablet:max-w-full text-sm tablet:text-base mx-auto flex-col tablet:flex-row text-center flex gap-x-2 justify-center -rotate-[10deg] [&>*]:before:mr-2 [&>*]:before:font-bold [&>span]:before:content-["·"]'>
-							<strong data-atropos-offset='2'>21 y 22 marzo</strong>
+							<strong data-atropos-offset='2'>28 de mayo</strong>
 							<span data-atropos-offset='2' class='opacity-70'>
 								{date}
 							</span>
