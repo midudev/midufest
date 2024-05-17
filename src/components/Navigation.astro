@@ -139,9 +139,9 @@ const getTargetSection = (entry) => {
 
 	if (index >= sections.length - 1) {
 		return entry.target
-	} else {
-		return sections[index + 1]
 	}
+
+	return sections[index + 1]
 }
 
 const updateLink = (target) => {
@@ -150,11 +150,7 @@ const updateLink = (target) => {
 
 const onIntersect = (entries) => {
 	entries.forEach((entry) => {
-		if (document.documentElement > prevYPosition) {
-			direction = 'down'
-		} else {
-			direction = 'up'
-		}
+		direction = document.documentElement.scrollTop > prevYPosition ? 'down' : 'up'
 
 		prevYPosition = document.documentElement.scrollTop
 
