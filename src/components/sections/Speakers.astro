@@ -3,125 +3,143 @@ import SectionTitle from '@components/SectionTitle.astro'
 import SpeakerCard from '@components/SpeakerCard.astro'
 
 const speakers = [
+	// {
+	// 	id: 'teffcode',
+	// 	name: 'Estefany Aguilar',
+	// 	title: 'De JavaScript a React',
+	// 	description: '¿Cómo pasar del mundo de JavaScript al mundo de React? Te contaré cómo aprender React desde lo que ya has aprendido en JavaScript haciendo un versus entre ambos y revisando los temas más importantes para comenzar.',
+	// 	twitter: 'teffcode',
+	// 	github: 'teffcode'
+	// },
 	{
-		id: 'teffcode',
-		name: 'Estefany Aguilar',
-		title: 'De JavaScript a React',
-		description: '¿Cómo pasar del mundo de JavaScript al mundo de React? Te contaré cómo aprender React desde lo que ya has aprendido en JavaScript haciendo un versus entre ambos y revisando los temas más importantes para comenzar.',
-		twitter: 'teffcode',
-		github: 'teffcode'
+		id: 'ritacodes',
+		name: 'Rita Codes',
+		title:
+			'Por confirmar',
+		twitter: 'rita_codes',
+		github: 'rita_codes',
+		description:
+			'Por confirmar'
 	},
 	{
 		id: 'davideast',
 		name: 'David East',
 		title:
-			'Rendimiento web: JavaScript y todos los errores que estamos cometiendo',
+			'Proyecto IDX: El editor de Google en la nube',
 		twitter: '_davideast',
 		github: 'davideast',
 		description:
-			'¿Qué tan rápido debe cargar su sitio web? ¿Quizás 5 o 6 segundos? ¿Cómo lo sabes realmente? ¿Por qué tu web va lenta? Cometemos muchos errores al desarrollar sitios con JavaScript. En esta charla, exploraremos algunos de los problemas más comunes y no tan comunes en los sitios web. También aprenderemos cómo podemos monitorear los datos reales provenientes de usuarios reales para tomar mejores decisiones.'
+			'Aprende a sacar el máximo partido al editor IDX. ¿Qué ventajas tiene? Inteligencia Artificial integrada, simulador de dispositivos móviles y muchas cosas más.'
 	},
-	{
-		id: 'lizz',
-		name: 'Lizz Parody',
-		title: 'Nuevas features en Node.js que deberías conocer',
-		description: '¡Node.js está cambiando! En esta charla veremos las nuevas features que se están implementando en Node.js y cómo podemos aprovecharlas en nuestros proyectos.',
-		twitter: 'LizzParody',
-		github: 'LizzParody'
-	},
+	// {
+	// 	id: 'lizz',
+	// 	name: 'Lizz Parody',
+	// 	title: 'Nuevas features en Node.js que deberías conocer',
+	// 	description: '¡Node.js está cambiando! En esta charla veremos las nuevas features que se están implementando en Node.js y cómo podemos aprovecharlas en nuestros proyectos.',
+	// 	twitter: 'LizzParody',
+	// 	github: 'LizzParody'
+	// },
 	{
 		id: 'irene',
-		name: 'Irene M Morgado',
+		name: 'Irene M. Morgado',
 		title: 'Encontrar trabajo dev en tiempos loquísimos',
 		description:
 			'El mundo está fatal. Cada día tenemos nuevas noticias de inestabilidad en proyectos y empresas tech, grandes y pequeñas. La realidad está cambiando y hay nuevos enfoques en procesos de selección, proyectos de engagement y de cultura. En esta charla hablaremos de cómo identificar proyectos que valgan la pena y cómo hacer valer nuestro CV en organizaciones que nos interesen.',
 		twitter: 'IrnMM'
 	},
-	{
-		id: 'pombo',
-		name: 'Rodrigo Pombo',
-		title: 'React Server Components: Más concerns, menos preocupaciones',
-		description: 'Los RSC desbloquean muchas posibilidades a la hora de construir webs con React con mejor rendimiento. En esta charla te voy a enseñar cómo los estoy usando para crear una biblioteca que hace Syntax Highlighting con 0 JS en el cliente.',
-		twitter: 'pomber',
-		github: 'pomber'
-	},
-	{
-		id: 'carmen',
-		name: 'Carmen Ansio',
-		title: 'Back to the future CSS edition',
-		description:
-			'Acompañadme en este viaje para descubrir las últimas funcionalidades de CSS. Haremos una revisión de las nuevas propiedades y de las que veremos este 2023.',
-		twitter: 'carmenansio',
-		github: 'carmenansio'
-	},
-	{
-		id: 'bolonio',
-		name: 'Adrián Bolonio',
-		title: '¡Este código es una ruina!: Estrategias de accesibilidad web',
-		description:
-			'Es tu primera semana en tu nuevo trabajo, empiezas a investigar el código y te das cuenta de que el producto es complemente inaccesible. Y piensas: ¿Por dónde empiezo? ¿Cuál es la mejor estrategia para convertir un producto maduro en un producto accesible? ¿Qué herramientas uso?',
-		twitter: 'bolonio',
-		github: 'bolonio'
-	},
-	{
-		id: 'hdeleon',
-		name: 'Héctor de León',
-		title: 'Patrones de Diseño y Cervezas',
-		description: '¿Quieres mejorar en programación? Pues necesitas dominar los patrones de diseño. No te preocupes, te voy a enseñar los patrones de diseño más famosos en programación... explicado con cervezas 🍺.',
-		twitter: 'powerhdeleon',
-		github: 'powerhdeleon'
-	},
-	{
-		id: 'ari',
-		name: 'Ari Jurado',
-		title: 'Del front al back',
-		description: 'Tras 3 años trabajando como frontend en consultoras di un cambio de 180°: entré en una empresa de producto, con prácticas de XP, como backend y aunque fuese Node.js ¡Esto es otro JavaScript! En esta charla te quiero contar cómo ha sido el cambio sin tener lado favorito, aunque uno es oscuro y el otro tiene colorines.',
-		twitter: 'Ari_Reinventada'
-	},
+	// {
+	// 	id: 'pombo',
+	// 	name: 'Rodrigo Pombo',
+	// 	title: 'React Server Components: Más concerns, menos preocupaciones',
+	// 	description: 'Los RSC desbloquean muchas posibilidades a la hora de construir webs con React con mejor rendimiento. En esta charla te voy a enseñar cómo los estoy usando para crear una biblioteca que hace Syntax Highlighting con 0 JS en el cliente.',
+	// 	twitter: 'pomber',
+	// 	github: 'pomber'
+	// },
+	// {
+	// 	id: 'carmen',
+	// 	name: 'Carmen Ansio',
+	// 	title: 'Back to the future CSS edition',
+	// 	description:
+	// 		'Acompañadme en este viaje para descubrir las últimas funcionalidades de CSS. Haremos una revisión de las nuevas propiedades y de las que veremos este 2023.',
+	// 	twitter: 'carmenansio',
+	// 	github: 'carmenansio'
+	// },
+	// {
+	// 	id: 'bolonio',
+	// 	name: 'Adrián Bolonio',
+	// 	title: '¡Este código es una ruina!: Estrategias de accesibilidad web',
+	// 	description:
+	// 		'Es tu primera semana en tu nuevo trabajo, empiezas a investigar el código y te das cuenta de que el producto es complemente inaccesible. Y piensas: ¿Por dónde empiezo? ¿Cuál es la mejor estrategia para convertir un producto maduro en un producto accesible? ¿Qué herramientas uso?',
+	// 	twitter: 'bolonio',
+	// 	github: 'bolonio'
+	// },
+	// {
+	// 	id: 'hdeleon',
+	// 	name: 'Héctor de León',
+	// 	title: 'Patrones de Diseño y Cervezas',
+	// 	description: '¿Quieres mejorar en programación? Pues necesitas dominar los patrones de diseño. No te preocupes, te voy a enseñar los patrones de diseño más famosos en programación... explicado con cervezas 🍺.',
+	// 	twitter: 'powerhdeleon',
+	// 	github: 'powerhdeleon'
+	// },
+	// {
+	// 	id: 'ari',
+	// 	name: 'Ari Jurado',
+	// 	title: 'Del front al back',
+	// 	description: 'Tras 3 años trabajando como frontend en consultoras di un cambio de 180°: entré en una empresa de producto, con prácticas de XP, como backend y aunque fuese Node.js ¡Esto es otro JavaScript! En esta charla te quiero contar cómo ha sido el cambio sin tener lado favorito, aunque uno es oscuro y el otro tiene colorines.',
+	// 	twitter: 'Ari_Reinventada'
+	// },
 	{
 		id: 'goncy',
 		name: 'Goncy Pozzo',
-		title: 'Ni estático ni dinámico, ambos. Usando Next.js cache con app directory.',
-		description: 'En versiones actuales de Next.js, nuestras páginas pueden ser estáticas (getStaticProps), dinámicas (getServerSideProps) o si querémos obtener algo intermedio debemos hacerlo del lado del cliente, lo que generalmente implica agregar librerías o boilerplate. Vamos a ver como usar Next.js cache para mover lo estático, desde nuestra página a cada request de manera independiente.',
+		title: 'De 0 a Senior: el camino en programación',
+		description: '¿Qué se necesita para pasar de Junior a Senior? ¿Hay una receta mágica? ¿Es sólo cuestión de tiempo? Consejos, ideas y trucos para que lo consigas',
 		twitter: 'goncy',
 		github: 'goncy'
 	},
 	{
-		id: 'platzi',
-		name: 'Nicobytes + Oscar + Diana Nerd + Mus',
-		title: 'Batalla: Angular vs Svelte vs Vue vs React',
-		description: '¿Qué framework es el mejor en el frontend? ¿Cuál deberías aprender primero? ¿Cuál tiene más futuro? ¡Todo esto y más en esta mesa redonda con estos expertos!',
-		smallTitle: true
+		id: 'danidelacruz',
+		name: 'Dani de la Cruz',
+		title: 'Encontrar trabajo en programación',
+		description: 'Trucos y consejos para encontrar trabajo en estos tiempos en el mundo de la programación',
+		twitter: 'danidlcdev',
+		github: 'delacruz-dev',
 	},
-	{
-		id: 'alba',
-		name: 'Alba Silvente',
-		title: 'Una saga de infortunios de renderizado web',
-		description: 'Descubre la evolución de las técnicas de renderizado web y en qué consiste el movimiento Jamstack. Construiremos un proyecto desde cero para demostrar cómo un generador de sitios estáticos y un Headless CMS se pueden combinar para crear páginas dinámicas, manteniendo las ventajas de rendimiento y escalabilidad de un sitio estático.',
-		twitter: 'https://twitter.com/dawntraoz',
-		github: 'https://github.com/Dawntraoz'
-	},
-	{
-		id: 'codely_beta',
-		name: 'Javi y Ronny de Codely + Martí de BettaTech',
-		title: 'De Junior a Senior',
-		description: '¿Qué se necesita para pasar de Junior a Senior? ¿Hay una receta mágica? ¿Es sólo cuestión de tiempo?La gente de Codely y Martí de BettaTech te cuentan los secretos y las claves para que lo consigas.',
-		smallTitle: true
-	}
+	// {
+	// 	id: 'platzi',
+	// 	name: 'Nicobytes + Oscar + Diana Nerd + Mus',
+	// 	title: 'Batalla: Angular vs Svelte vs Vue vs React',
+	// 	description: '¿Qué framework es el mejor en el frontend? ¿Cuál deberías aprender primero? ¿Cuál tiene más futuro? ¡Todo esto y más en esta mesa redonda con estos expertos!',
+	// 	smallTitle: true
+	// },
+	// {
+	// 	id: 'alba',
+	// 	name: 'Alba Silvente',
+	// 	title: 'Una saga de infortunios de renderizado web',
+	// 	description: 'Descubre la evolución de las técnicas de renderizado web y en qué consiste el movimiento Jamstack. Construiremos un proyecto desde cero para demostrar cómo un generador de sitios estáticos y un Headless CMS se pueden combinar para crear páginas dinámicas, manteniendo las ventajas de rendimiento y escalabilidad de un sitio estático.',
+	// 	twitter: 'https://twitter.com/dawntraoz',
+	// 	github: 'https://github.com/Dawntraoz'
+	// },
+	// {
+	// 	id: 'codely_beta',
+	// 	name: 'Javi y Ronny de Codely + Martí de BettaTech',
+	// 	title: 'De Junior a Senior',
+	// 	description: '¿Qué se necesita para pasar de Junior a Senior? ¿Hay una receta mágica? ¿Es sólo cuestión de tiempo?La gente de Codely y Martí de BettaTech te cuentan los secretos y las claves para que lo consigas.',
+	// 	smallTitle: true
+	// }
 ]
 ---
 
 <section
 	id='speakers'
-	class='break-words text-white py-24 mx-auto max-w-prose md:px-2 min-h-screen mt-28'
+	class='break-words text-white py-24 mx-auto max-w-prose md:px-2  mt-28'
 >
-	<SectionTitle title='Speakers' />
+	<SectionTitle title='Los Speakers' />
 
 	<div
 		class='py-24 flex items-center justify-center flex-col text-center gap-y-8'
 	>
 		<ul
-			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-2 text-center items-center justify-center pb-24 mx-0 px-4 lg:-mx-36'
+			class='-rotate-[10deg] flex flex-row flex-wrap gap-x-2 text-center items-center text-wrap justify-center pb-24 mx-0 px-4 lg:-mx-36'
 		>
 			{
 				speakers.map((speaker, index) => (
@@ -145,7 +163,7 @@ const speakers = [
 		<ul>
 			{
 				speakers.map((speaker) => (
-					<li class='min-h-screen'>
+					<li class='pb-10'>
 						<SpeakerCard speaker={speaker} />
 					</li>
 				))

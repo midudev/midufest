@@ -16,16 +16,16 @@ const { speaker } = Astro.props as { speaker: Speaker }
 
 <article id={`${speaker.id}`} class='relative'>
 	<img
-		class='relative md:top-20 h-auto max-h-[500px] md:max-h-[650px] object-contain w-full md:w-2/3 drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]'
+		class='relative h-[500px] grayscale w-full object-center object-contain [mask-image:linear-gradient(to_bottom,_black_80%,transparent_100%)]'
 		alt={`Fotografía de ${speaker.name}`}
-		src={`/${speaker.id}.webp`}
+		src={`/${speaker.id}.png`}
 	/>
 	<h3
-		class={`relative bottom-48 [text-shadow:0_0_20px_black] uppercase text-primary ${speaker.smallTitle ? 'leading-[.8em] text-4xl md:leading-[.8em] md:text-6xl mt-20' : 'leading-[.8em] text-6xl md:leading-[.8em] md:text-9xl'} -rotate-[10deg] italic font-black text-center`}
+		class={`relative bottom-24 [text-shadow:0_0_20px_black] uppercase text-primary ${speaker.smallTitle ? 'leading-[.8em] text-4xl md:leading-[.8em] md:text-6xl mt-20' : 'leading-[.8em] text-6xl md:leading-[.8em] md:text-9xl'} -rotate-[10deg] italic font-black text-center`}
 	>
 		{speaker.name}
 	</h3>
-	<footer class='relative bottom-28'>
+	<footer class='relative bottom-10'>
 		<div class='text-left'>
 			<h4 class='font-bold text-3xl text-left mb-4'>
 				{speaker.title}

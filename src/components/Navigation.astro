@@ -4,115 +4,61 @@ import MenuIcon from '@icons/Menu.astro'
 import { Icons } from '@components/Icons'
 
 const NAVIGATION_LINKS = [
-	{
-		title: 'Inicio',
-		href: '#top'
-	},
-	{
-		title: 'Patrocinadores',
-		href: '#sponsors'
-	},
+	// {
+	// 	title: 'Patrocinadores',
+	// 	href: '#sponsors'
+	// },
 	{
 		title: 'Speakers',
 		href: '#speakers'
 	},
-	{
-		title: 'Agenda',
-		href: '#agenda'
-	},
-	{
-		title: 'Tickets',
-		href: '#ticket'
-	},
+	// {
+	// 	title: 'Agenda',
+	// 	href: '#agenda'
+	// },
+	// {
+	// 	title: 'Tickets',
+	// 	href: '#ticket'
+	// },
 	{
 		title: 'Código de conducta',
 		href: '#coc'
 	}
 ]
-
-const SOCIAL_NETWORKS_LINKS = [
-	{
-		component: Icons.twitch,
-		title: 'twitch',
-		icon: 'twitch-icon.svg',
-		href: 'https://twitch.tv/midudev'
-	},
-	{
-		component: Icons.youtube,
-		title: 'youtube',
-		icon: 'youtube-icon.svg',
-		href: 'https://youtube.com/midudev'
-	},
-	{
-		component: Icons.instagram,
-		title: 'instagram',
-		icon: 'instagram-icon.svg',
-		href: 'https://instagram.com/midu.dev'
-	},
-	{
-		component: Icons.twitter,
-		title: 'twitter',
-		icon: 'twitter-icon.svg',
-		href: 'https://twitter.com/midudev'
-	}
-];
 ---
 
-<aside
-	class='flex flex:row items-center justify-between xl:justify-center text-primary px-4 xl:pb-20 xl:sticky xl:top-0 xl:flex-col xl:min-h-screen'
+<header
+	class='bg-black/80 z-10 backdrop-blur-lg flex flex-row items-center justify-center xl:justify-center text-primary px-4 xl:sticky xl:top-0 gap-x-10'
 >
-	<a href='/#top' class='w-full h-full xl:h-auto py-6'>
-		<Icons.logo class='xl:w-48 w-72 lg:w-80 h-full mx-auto animate-zoomIn' />
+	<a href='/#'>
+		<Icons.logo class='xl:w-36 w-72 lg:w-80 h-full mx-auto animate-zoomIn' />
 	</a>
 
 	<input type='checkbox' id='menu' hidden class='peer' />
 	<label
 		for='menu'
-		class='bg-zinc-800 w-14 h-14 border-zinc-500 flex items-center justify-center rounded-full border fixed right-4 bottom-4 xl:relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
+		class='bg-zinc-800 hidden w-14 h-14 border-zinc-500 items-center justify-center rounded-full border fixed right-4 bottom-4 xl:relative z-50 xl:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer hover:scale-125 transition hover:border-white'
 	>
 		<MenuIcon />
 	</label>
 
 	<nav
 		id='navbar'
-		class='min-h-screen last fixed top-0 left-0 pointer-events-none opacity-0 peer-checked:opacity-100 peer-checked:pointer-events-auto right-0 z-40 flex py-12 px-8 bg-black/30 backdrop-blur-lg xl:bg-transparent text-center xl:opacity-100 xl:pointer-events-auto xl:min-h-0 xl:relative xl:px-0 justify-center flex-col xl:backdrop-blur-0 xl:mt-1 transition-opacity xl:transition-all'
+		class='min-h-screen hidden last sticky top-0 left-0 pointer-events-none opacity-0 peer-checked:opacity-100 peer-checked:pointer-events-auto right-0 z-40 flex py-12 px-8  text-center xl:opacity-100 xl:pointer-events-auto xl:min-h-0 xl:relative xl:px-0 justify-center flex-col xl:mt-1 transition-opacity xl:transition-all'
 	>
-		<ul class='flex flex-col gap-y-8 mb-20'>
+		<ul class='flex flex-col md:flex-row gap-8'>
 			{
-				NAVIGATION_LINKS.map(({ title, href }) => {
-					return (
-						<li>
-							<Link href={href} title={title} />
-						</li>
+				NAVIGATION_LINKS.map(({ title, href }) => (
+					<li>
+						<Link href={href} title={title} />
+					</li>
 					)
-				})
+				)
 			}
 		</ul>
-
-		<div class='flex flex-row items-center justify-center gap-4 py-2'>
-			{
-				SOCIAL_NETWORKS_LINKS.map(({ component: Icon, href, title }) => {
-					return (
-						<a
-							class='text-white hover:scale-125 transition-all hover:text-primary'
-							href={href}
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<span aria-label={title}>
-								<Icon />
-							</span>
-						</a>
-					)
-				})
-			}
-		</div>
-
-		<span class='text-white opacity-70'
-		>Desarrollado moviendo las manitas 👋</span
-		>
+		
 	</nav>
-</aside>
+</header>
 
 <script type='module'>
 const sections = document.querySelectorAll('main > section')

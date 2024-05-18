@@ -20,7 +20,7 @@
     "@resvg/resvg-js": "2.6.2",
     "@supabase/supabase-js": "2.43.2",
     "add-to-calendar-button": "2.6.15",
-    "astro": "4.8.5",
+    "astro": "4.8.6",
     "atropos": "2.0.2",
     "preact": "10.22.0",
     "satori": "0.10.13",

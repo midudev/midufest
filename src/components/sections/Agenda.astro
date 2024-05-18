@@ -6,7 +6,7 @@ import TimeZone from '@components/TimeZone.astro'
 const DAY_ONE = [
 	{
 		time: 1679418000000,
-		title: '¡Hola, mundo! ¡Hola, miduFest!',
+		title: '¡Empieza la miduFest!',
 		speaker: 'Miguel Ángel Durán'
 	},
 	{
@@ -66,95 +66,6 @@ const DAY_ONE = [
 		speaker: 'Miguel Ángel Durán'
 	}
 ]
-
-const DAY_TWO = [
-	{
-		time: 1679418000000,
-		title: '¡Hola, mundo! ¡Hola, miduFest!',
-		speaker: 'Miguel Ángel Durán'
-	},
-	{
-		time: 1679505000000,
-		title: 'Una saga de infortunios de renderizado web',
-		speaker: 'Alba Silvente',
-		id: 'alba',
-		className: '-mb-3'
-	},
-	{
-		time: 1679506800000,
-		title: 'Del Front al Back',
-		speaker: 'Ari Reinventada',
-		id: 'ari',
-		className: '-mb-3'
-	},
-	{
-		time: 1679508600000,
-		title: '📚 Sorteo Libros Código Sostenible',
-		speaker: 'Miguel Ángel Durán'
-	},
-	{
-		time: 1679508900000,
-		title: 'De la Single Page Application a los Microfrontends',
-		speaker: 'Marcos Mendez Filesi'
-		// id: 'marcos'
-	},
-	{
-		time: 1679509500000,
-		title: '🎮 Sorteo XBOX Series S',
-		speaker: 'Miguel Ángel Durán'
-	},
-	{
-		time: 1679509800000,
-		title: 'Encontrar trabajo dev en tiempos loquísimos',
-		speaker: 'Irene M Morgado',
-		id: 'irene',
-		className: '-mb-3'
-	},
-	{
-		time: 1679511900000,
-		title: 'Nuevas features en Node.js que deberías conocer',
-		speaker: 'Lizz Parody',
-		id: 'lizz',
-		className: '-mb-4'
-	},
-	{
-		time: 1679513700000,
-		title: '⌨️ Sorteo Teclado Keychron',
-		speaker: 'Miguel Ángel Durán'
-	},
-	{
-		time: 1679514000000,
-		title: 'Conectando Programación con Inteligencia Artificial',
-		speaker: 'Luis Serrano'
-		// id: 'serrano'
-	},
-	{
-		title: 'Patrones de Diseño y Cervezas',
-		speaker: 'Héctor de León',
-		id: 'hdeleon',
-		time: 1679514600000,
-		className: '-mb-3'
-	},
-	{
-		title: 'Ni estático ni dinámico, ambos',
-		speaker: 'Goncy Pozzo',
-		id: 'goncy',
-		time: 1679517000000,
-		className: '-mb-2'
-	},
-	{
-		title: 'De Junior a Senior',
-		speaker: 'Codely + BettaTech',
-		id: 'codely_beta',
-		time: 1679518800000,
-		className: '-mb-5'
-	},
-	{
-		title: 'Sorteo final',
-		speaker: 'Miguel Ángel Durán',
-		time: 1679520600000
-	}
-]
 ---
 
 
@@ -164,7 +75,7 @@ const DAY_TWO = [
 	<small class='text-primary font-semibold -mt-28 block'>Las horas están en tu zona horaria<TimeZone />
 	</small>
 
-	<h2 class='mt-8 text-2xl font-bold text-white text-center'>21 de marzo</h2>
+	<h2 class='mt-8 text-2xl font-bold text-white text-center'>28 de mayo</h2>
 	<h3 class='text-center font-semibold text-zinc-300'>Streaming en <a class='text-purple-300 hover:underline' href='https://twitch.tv/midudev' target='_blank' rel='noopener noreferrer'>https://twitch.tv/midudev</a></h3>
 
 	<div class='flex flex-col gap-y-4 mt-8'>
@@ -172,14 +83,4 @@ const DAY_TWO = [
 			DAY_ONE.map(day => <ItemAgenda {...day} />)
 		}
 	</div>
-
-	<h2 class='mt-8 text-2xl font-bold text-white text-center'>22 de marzo</h2>
-	<h3 class='text-center font-semibold text-zinc-300'>Streaming en <a class='text-purple-300 hover:underline' href='https://twitch.tv/midudev' target='_blank' rel='noopener noreferrer'>https://twitch.tv/midudev</a></h3>
-
-	<div class='flex flex-col gap-y-4 mt-8'>
-		{
-			DAY_TWO.map(day => <ItemAgenda {...day} />)
-		}
-	</div>
-
 </section>

@@ -1,0 +1,53 @@
+---
+import { Icons } from '@components/Icons'
+
+const SOCIAL_NETWORKS_LINKS = [
+	{
+		component: Icons.twitch,
+		title: 'twitch',
+		icon: 'twitch-icon.svg',
+		href: 'https://twitch.tv/midudev'
+	},
+	{
+		component: Icons.youtube,
+		title: 'youtube',
+		icon: 'youtube-icon.svg',
+		href: 'https://youtube.com/midudev'
+	},
+	{
+		component: Icons.instagram,
+		title: 'instagram',
+		icon: 'instagram-icon.svg',
+		href: 'https://instagram.com/midu.dev'
+	},
+	{
+		component: Icons.twitter,
+		title: 'twitter',
+		icon: 'twitter-icon.svg',
+		href: 'https://twitter.com/midudev'
+	}
+];
+---
+
+<div class='flex flex-row items-center justify-center gap-4 py-2'>
+	{
+		SOCIAL_NETWORKS_LINKS.map(({ component: Icon, href, title }) => {
+			return (
+				<a
+					class='text-white hover:scale-125 transition-all hover:text-primary'
+					href={href}
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					<span aria-label={title}>
+						<Icon />
+					</span>
+				</a>
+			)
+		})
+	}
+</div>
+
+<span class='text-white opacity-70'>
+	Desarrollado moviendo las manitas 👋
+</span>
