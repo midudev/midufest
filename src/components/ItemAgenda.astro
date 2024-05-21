@@ -14,15 +14,15 @@ const { className, time = 1679418000000, title, speaker, emoji, id } = Astro.pro
 	>
 	<div class='flex flex-col justify-center w-full pr-8'>
 		<strong
-			class={` text-[16px] pr-8 max-w-[280px] mobile:max-w-full leading-tight text-left break-words overflow-hidden ${
+			class={`text-balance text-[16px] pr-8 max-w-[280px] mobile:max-w-full leading-tight text-left break-words overflow-hidden ${
 				speaker ? 'text-primary tablet:text-[24px]' : 'text-black'
 			}`}>{title}</strong
 		>
 		{speaker && <span class='max-w-[280px] mobile:max-w-full'>{speaker}</span>}
 	</div>
 	{id && <img
-		class={`${className} absolute w-28 h-[140px] object-cover object-center right-0 bottom-0 drop-shadow-[5px_5px_100px_rgba(255,255,255,.2)]`}
+		class={`${className} absolute w-28 h-[140px] object-cover object-center right-0 bottom-0 grayscale [mask-image:linear-gradient(to_bottom,_black_70%,transparent_90%)]`}
 		alt={`Fotografía de ${speaker}`}
-		src={`/${id}.webp`}
+		src={`/${id}.png`}
 	/>}
 </article>
