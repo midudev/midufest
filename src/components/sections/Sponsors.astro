@@ -3,11 +3,16 @@ import PatrocinadorBox from '@components/PatrocinadorBox.astro'
 import SectionTitle from '@components/SectionTitle.astro';
 ---
 
-<section id='sponsors' class='break-words text-white py-24 mx-auto max-w-prose md:px-2 min-h-screen mt-28'>
+<section id='sponsors' class='break-words text-white py-24 mx-auto max-w-prose md:px-2 mt-28'>
 	<SectionTitle
 		title='Patrocinadores' />
 
-	<div class='grid grid-cols-4 md:grid-cols-4 w-full gap-4 mb-4 justify-center items-center'>
+		<div class='grid grid-cols-4 md:grid-cols-4 w-full gap-4 justify-center items-center mt-10'>
+		<PatrocinadorBox img='dondominio.webp' href='https://dondominio.com' />
+		<PatrocinadorBox img='keepcoding.webp' href='https://keepcoding.com' />
+		</div>
+
+	<!-- <div class='grid grid-cols-4 md:grid-cols-4 w-full gap-4 mb-4 justify-center items-center'>
 		<PatrocinadorBox img='softtek.webp' href='https://www.softtek.com/es-es/' />
 		<PatrocinadorBox img='autentia.webp' href='https://autentia.com' />
 		<PatrocinadorBox img='leanmind.svg' href='https://leanmind.es/es/' />
@@ -22,5 +27,5 @@ import SectionTitle from '@components/SectionTitle.astro';
 		<PatrocinadorBox size='md' img='codely.webp' href='https://codely.tv/pro/midudev' />
 		<PatrocinadorBox size='md' img='twitch.webp' href='https://twitch.tv/midudev' />
 		<PatrocinadorBox size='md' img='github.webp' href='https://github.com' />
-	</div>
+	</div> -->
 </section>
